@@ -57,7 +57,7 @@ export async function getAuthenticatedUser(request: NextRequest): Promise<User> 
     const cookies = request.headers.get('cookie');
     if (cookies) {
       const tokenMatch = cookies.match(/sb-access-token=([^;]+)/);
-      token = tokenMatch ? decodeURIComponent(tokenMatch[1]) : null;
+      token = tokenMatch ? decodeURIComponent(tokenMatch[1]) : undefined;
     }
   }
   

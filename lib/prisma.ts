@@ -23,7 +23,7 @@ export interface Book {
 // Prisma-like client interface using Supabase
 export const prisma = {
   book: {
-    findMany: async (options?: { where?: any; include?: any }) => {
+    findMany: async () => {
       const { data, error } = await supabase
         .from('books')
         .select('*');

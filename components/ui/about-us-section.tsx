@@ -23,6 +23,7 @@ import {
 } from "lucide-react"
 import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion"
 import { AnimatedText } from "@/components/ui/animated-shiny-text"
+import DomeGallery from "@/components/dome-gallery"
 
 export default function AboutUsSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -62,7 +63,6 @@ export default function AboutUsSection() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
     },
   }
 
@@ -118,10 +118,9 @@ export default function AboutUsSection() {
   ]
 
   const stats = [
-    { icon: <Church />, value: 500, label: "Members", suffix: "+" },
-    { icon: <Heart />, value: 1200, label: "Lives Touched", suffix: "+" },
-    { icon: <Calendar />, value: 15, label: "Years of Ministry", suffix: "" },
-    { icon: <Globe />, value: 25, label: "Mission Trips", suffix: "+" },
+    { icon: <Heart />, value: 100000, label: "Lives Touched", suffix: "+" },
+    { icon: <Calendar />, value: 20, label: "Years of Ministry", suffix: "" },
+    { icon: <Globe />, value: 100, label: "Mission Trips", suffix: "+" },
   ]
 
   return (
@@ -140,7 +139,7 @@ export default function AboutUsSection() {
         style={{ y: y2, rotate: rotate2 }}
       />
       <motion.div
-        className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-[#88734C]/30"
+        className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-[#598dee]/30"
         animate={{
           y: [0, -15, 0],
           opacity: [0.5, 1, 0.5],
@@ -171,7 +170,11 @@ export default function AboutUsSection() {
         animate={isInView ? "visible" : "hidden"}
         variants={containerVariants}
       >
-        <motion.div className="flex flex-col items-center mb-6" variants={itemVariants}>
+        <motion.div 
+          className="flex flex-col items-center mb-6" 
+          variants={itemVariants}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <motion.span
             className="text-[#598dee] font-medium mb-2 flex items-center gap-2"
             initial={{ opacity: 0, y: -10 }}
@@ -189,9 +192,75 @@ export default function AboutUsSection() {
           ></motion.div>
         </motion.div>
 
-        <motion.p className="text-center max-w-2xl mx-auto mb-16 text-gray-600" style={{ fontFamily: 'Satoshi, sans-serif' }} variants={itemVariants}>
-          We are a faithful community of believers dedicated to serving God and spreading His love. Through worship, fellowship, and service, we strive to make disciples and transform lives for the glory of Jesus Christ.
+        <motion.p className="text-center max-w-3xl mx-auto mb-8 text-lg text-gray-600" style={{ fontFamily: 'Satoshi, sans-serif' }} variants={itemVariants}>
+          Gospel For Unreached Nation Ministry is dedicated to bringing the transformative message of Jesus Christ to communities around the world who have yet to experience His love and salvation.
         </motion.p>
+
+        {/* Ministry Focus Features */}
+        <motion.div className="mb-16" variants={itemVariants}>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">Our Ministry Focus</h3>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Through literature, outreach, and community building, we strive to make a lasting impact in unreached nations.
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <motion.div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300" variants={itemVariants}>
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <Heart className="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Our Mission</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                To spread the Gospel of Jesus Christ to unreached nations through inspiring literature and transformative ministry work.
+              </p>
+            </motion.div>
+            
+            <motion.div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300" variants={itemVariants}>
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <Globe className="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Global Reach</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Connecting with communities worldwide, bringing hope and salvation to those who have never heard the Gospel message.
+              </p>
+            </motion.div>
+            
+            <motion.div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300" variants={itemVariants}>
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <BookOpen className="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Inspiring Literature</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Our collection of 8 carefully crafted books provides spiritual guidance, biblical wisdom, and encouragement for believers.
+              </p>
+            </motion.div>
+            
+            <motion.div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300" variants={itemVariants}>
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Community Impact</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Building strong Christian communities and empowering local leaders to continue the ministry in their regions.
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Vision Section */}
+        <motion.div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl mb-16" variants={itemVariants}>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Our Vision</h3>
+          <p className="text-center text-gray-600 leading-relaxed mb-6 max-w-4xl mx-auto">
+            We envision a world where every nation has access to the Gospel message, where communities are transformed by God's love, and where local leaders are equipped to continue the ministry work in their regions. Through our books and outreach programs, we aim to plant seeds of faith that will grow into thriving Christian communities.
+          </p>
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 border border-blue-200">
+              <Globe className="h-5 w-5 text-blue-600" />
+              <span className="text-blue-700 font-medium">
+                Reaching Every Nation with God's Love
+              </span>
+            </div>
+          </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {/* Left Column */}
@@ -219,7 +288,7 @@ export default function AboutUsSection() {
               <div className="space-y-1">
                 <AnimatedText 
                    text="Gospel For" 
-                   gradientColors="linear-gradient(90deg, #88734C, #A9BBC8, #88734C)"
+                   gradientColors="linear-gradient(90deg, #598dee, #3b82f6, #598dee)"
                    gradientAnimationDuration={2}
                    hoverEffect={true}
                    textClassName="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
@@ -227,7 +296,7 @@ export default function AboutUsSection() {
                  />
                  <AnimatedText 
                    text="Unreached" 
-                   gradientColors="linear-gradient(90deg, #88734C, #A9BBC8, #88734C)"
+                   gradientColors="linear-gradient(90deg, #598dee, #3b82f6, #598dee)"
                    gradientAnimationDuration={2}
                    hoverEffect={true}
                    textClassName="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
@@ -235,7 +304,7 @@ export default function AboutUsSection() {
                  />
                  <AnimatedText 
                    text="Nation" 
-                   gradientColors="linear-gradient(90deg, #88734C, #A9BBC8, #88734C)"
+                   gradientColors="linear-gradient(90deg, #598dee, #3b82f6, #598dee)"
                    gradientAnimationDuration={2}
                    hoverEffect={true}
                    textClassName="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
@@ -243,7 +312,7 @@ export default function AboutUsSection() {
                  />
                  <AnimatedText 
                    text="Ministry" 
-                   gradientColors="linear-gradient(90deg, #88734C, #A9BBC8, #88734C)"
+                   gradientColors="linear-gradient(90deg, #598dee, #3b82f6, #598dee)"
                    gradientAnimationDuration={2}
                    hoverEffect={true}
                    textClassName="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
@@ -256,7 +325,7 @@ export default function AboutUsSection() {
             <motion.div className="hidden md:flex flex-col items-center space-y-2" variants={itemVariants}>
               <AnimatedText 
                 text="G" 
-                gradientColors="linear-gradient(90deg, #88734C, #A9BBC8, #88734C)"
+                gradientColors="linear-gradient(90deg, #598dee, #3b82f6, #598dee)"
                 gradientAnimationDuration={2}
                 hoverEffect={true}
                 textClassName="text-6xl md:text-7xl lg:text-8xl font-bold leading-none"
@@ -264,7 +333,7 @@ export default function AboutUsSection() {
               />
               <AnimatedText 
                 text="F" 
-                gradientColors="linear-gradient(90deg, #88734C, #A9BBC8, #88734C)"
+                gradientColors="linear-gradient(90deg, #598dee, #3b82f6, #598dee)"
                 gradientAnimationDuration={2}
                 hoverEffect={true}
                 textClassName="text-6xl md:text-7xl lg:text-8xl font-bold leading-none"
@@ -272,7 +341,7 @@ export default function AboutUsSection() {
               />
               <AnimatedText 
                 text="U" 
-                gradientColors="linear-gradient(90deg, #88734C, #A9BBC8, #88734C)"
+                gradientColors="linear-gradient(90deg, #598dee, #3b82f6, #598dee)"
                 gradientAnimationDuration={2}
                 hoverEffect={true}
                 textClassName="text-6xl md:text-7xl lg:text-8xl font-bold leading-none"
@@ -280,7 +349,7 @@ export default function AboutUsSection() {
               />
               <AnimatedText 
                 text="N" 
-                gradientColors="linear-gradient(90deg, #88734C, #A9BBC8, #88734C)"
+                gradientColors="linear-gradient(90deg, #598dee, #3b82f6, #598dee)"
                 gradientAnimationDuration={2}
                 hoverEffect={true}
                 textClassName="text-6xl md:text-7xl lg:text-8xl font-bold leading-none"
@@ -288,7 +357,7 @@ export default function AboutUsSection() {
               />
               <AnimatedText 
                 text="M" 
-                gradientColors="linear-gradient(90deg, #88734C, #A9BBC8, #88734C)"
+                gradientColors="linear-gradient(90deg, #598dee, #3b82f6, #598dee)"
                 gradientAnimationDuration={2}
                 hoverEffect={true}
                 textClassName="text-6xl md:text-7xl lg:text-8xl font-bold leading-none"
@@ -314,7 +383,66 @@ export default function AboutUsSection() {
                 />
               ))}
           </div>
-        </div>    
+        </div>
+        
+        {/* Statistics Section */}
+        <motion.div 
+          ref={statsRef}
+          className="mt-20 pt-16 border-t border-gray-200"
+          variants={containerVariants}
+        >
+          <motion.h3 
+            className="text-2xl md:text-3xl font-bold text-gray-800 mb-12 text-center"
+            variants={itemVariants}
+          >
+            Our Impact
+          </motion.h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {stats.map((stat, index) => (
+              <StatCounter
+                key={stat.label}
+                icon={stat.icon}
+                value={stat.value}
+                label={stat.label}
+                suffix={stat.suffix}
+                delay={index * 0.2}
+              />
+            ))}
+          </div>
+          
+          {/* Ministry Gallery */}
+          <motion.div 
+            className="mt-16 pt-12"
+            variants={itemVariants}
+          >
+            <motion.h4 
+              className="text-xl md:text-2xl font-semibold text-gray-800 mb-8 text-center"
+              variants={itemVariants}
+            >
+              Our Ministry in Action
+            </motion.h4>
+            <div className="h-[500px] w-full">
+              <DomeGallery
+                images={[
+                  { src: "/book1.jpg", alt: "Bible Study Materials" },
+                  { src: "/book2.jpg", alt: "Christian Literature" },
+                  { src: "/book3.jpg", alt: "Ministry Resources" },
+                  { src: "/book4.jpg", alt: "Spiritual Growth Books" },
+                  { src: "/book5.jpg", alt: "Faith Building Content" },
+                  { src: "/book6.jpg", alt: "Revival Literature" },
+                  { src: "/book7.jpg", alt: "Unity and Outreach" },
+                  { src: "/book8.JPG", alt: "Gospel and Culture" }
+                ]}
+                overlayBlurColor="#f8fafc"
+                imageBorderRadius="12px"
+                openedImageBorderRadius="16px"
+                grayscale={false}
+                segments={25}
+                fit={0.6}
+              />
+            </div>
+          </motion.div>
+        </motion.div>
       </motion.div>
     </section>
   )
@@ -327,7 +455,7 @@ interface ServiceItemProps {
   description: string
   variants: {
     hidden: { opacity: number; y?: number }
-    visible: { opacity: number; y?: number; transition: { duration: number; ease: string } }
+    visible: { opacity: number; y?: number }
   }
   delay: number
   direction: "left" | "right"
@@ -348,13 +476,13 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay,
         transition={{ duration: 0.6, delay: delay + 0.2 }}
       >
         <motion.div
-          className="text-[#88734C] bg-[#88734C]/10 p-3 rounded-lg transition-colors duration-300 group-hover:bg-[#88734C]/20 relative"
+          className="text-[#598dee] bg-[#598dee]/10 p-3 rounded-lg transition-colors duration-300 group-hover:bg-[#598dee]/20 relative"
           whileHover={{ rotate: [0, -10, 10, -5, 0], transition: { duration: 0.5 } }}
         >
           {icon}
           {secondaryIcon}
         </motion.div>
-        <h3 className="text-xl font-medium text-[#202e44] group-hover:text-[#88734C] transition-colors duration-300" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+        <h3 className="text-xl font-medium text-[#202e44] group-hover:text-[#598dee] transition-colors duration-300" style={{ fontFamily: 'Satoshi, sans-serif' }}>
           {title}
         </h3>
       </motion.div>

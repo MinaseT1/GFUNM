@@ -83,15 +83,10 @@ function HeroGeometric({
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: (i: number) => ({
+        visible: {
             opacity: 1,
             y: 0,
-            transition: {
-                duration: 1,
-                delay: 0.5 + i * 0.2,
-                ease: [0.25, 0.4, 0.25, 1],
-            },
-        }),
+        },
     };
 
     return (
@@ -152,6 +147,11 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
+                        transition={{
+                            duration: 1,
+                            delay: 0.5,
+                            ease: "easeOut",
+                        }}
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 mb-6 sm:mb-8 md:mb-12"
                     >
                         <Circle className="h-2 w-2 fill-blue-500" />
@@ -165,6 +165,11 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
+                        transition={{
+                            duration: 1,
+                            delay: 0.7,
+                            ease: "easeOut",
+                        }}
                     >
                         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-tight px-2">
                             <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-800 to-gray-600">
@@ -186,6 +191,11 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
+                        transition={{
+                            duration: 1,
+                            delay: 0.9,
+                            ease: "easeOut",
+                        }}
                     >
                         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-2 sm:px-4">
                             Bringing the Gospel to unreached nations through

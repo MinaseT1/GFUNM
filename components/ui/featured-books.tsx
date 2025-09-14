@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 // Book data - first 4 books for featured section
 const featuredBooks = [
   { id: 1, name: "ባለ ራእይነት ክፍል 1", image: { src: "/book1.jpg", alt: "Book 1" } },
-  { id: 2, name: "ባለ ራእይነት ክፍል 2", image: { src: "/book2.jpg", alt: "Book 2" } },
-  { id: 3, name: "ቤተ ክርስቲያን ከፓለቲካ ውጭ ናትን?", image: { src: "/book3.jpg", alt: "Book 3" } },
-  { id: 4, name: "የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 1", image: { src: "/book4.jpg", alt: "Book 4" } }
+    { id: 6, name: "ሪቫይቫል", image: { src: "/book6.jpg", alt: "Book 6" } },
+  { id: 5, name: "የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 2", image: { src: "/book5.jpg", alt: "Book 5" } },
+  { id: 8, name: "ወንጌል እና ባህል", image: { src: "/book8.JPG", alt: "Book 8" } }
 ];
 
 export default function FeaturedBooks() {
@@ -39,7 +39,7 @@ export default function FeaturedBooks() {
           {featuredBooks.map((book) => (
             <div key={book.id} className="flex flex-col items-center group">
               <div 
-                className="w-full aspect-[3/4] mb-4 cursor-pointer transform transition-transform duration-300 group-hover:scale-105" 
+                className="w-full aspect-[2/3] mb-4 cursor-pointer transform transition-transform duration-300 group-hover:scale-105" 
                 onClick={() => handleCardClick(book.id)}
               >
                 <InteractiveTiltCard
