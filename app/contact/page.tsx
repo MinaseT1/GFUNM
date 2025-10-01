@@ -21,8 +21,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: "Addis Ababa, Ethiopia",
-    description: "Our ministry headquarters"
+    details: "Awassa, Southern Ethiopia",
+    description: "Our ministry headquarters in the beautiful city of Awassa"
   }
 ];
 

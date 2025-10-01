@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
-import { ArrowLeft, Star, User } from "lucide-react";
+import { ArrowLeft, User } from "lucide-react";
 import { InteractiveTiltCard } from "@/components/tilt-card";
 
 // Book data - this should match the data in the main books page
@@ -110,23 +110,23 @@ const books = [
 const reviews = [
   {
     id: 1,
-    name: "አበበ ተስፋዬ",
+    name: "ተክለአብ ሽብሩ (ፒ.ኤ.ች.ዲ) አሜሪካ ተኔስኢ ስቴት ዩኒቨርሲት - ረ/ፕሮፌሰር",
     rating: 5,
-    comment: "በጣም ጠቃሚ መጽሐፍ ነው። የእምነት ጉዞዬን በእጅጉ ረድቶኛል።",
+    comment: "የኢትዮዽያ ቤተ-ክርስቲያን ከከበባት መንፈሳዊ እርጅናና ሞት የመውጫው መንገድ መጽሐፍ ቅዱሳዊ ተሐድሶ ብቻ እንደሆነ አበክሮ ያስረዳል።",
     date: "2024-01-15"
   },
   {
     id: 2,
-    name: "ሳራ መኮንን",
+    name: "ወንድም መኮንን ደጉ በላይ ሻሸመኔ ሙሉ ወንጌል አማኞች ቤ/ክ አገልጋይ",
     rating: 5,
-    comment: "ይህ መጽሐፍ ህይወቴን ለውጦታል። ለሁሉም እመክራለሁ።",
+    comment: "የአገሬ ሕዝብ ጽድቅ እንደራበው ዘመኑን እንዳይጨርስ ይህ መጸሐፍ ተጽፏል። …",
     date: "2024-01-10"
   },
   {
     id: 3,
-    name: "ዳዊት አለሙ",
+    name: "ጎሳ እሼቱመ - በኢትዮዽያ ወንጌላውያን ተማሪዋችና ማህበር (ኢቫሱ) የደቡብ ቢሮ አስተባባሪ",
     rating: 4,
-    comment: "በጣም ጥሩ ትምህርቶች አሉበት። ለመንፈሳዊ እድገት ጠቃሚ ነው።",
+    comment: "የተሐድሶ ያለህ! ብሎ ለሚጮህ ትውልድ በጊዜው የተወለደ ወቅታዊ መጽሐፍ ነው፧ … የምድራችንን ሁለንተናዊ ተሐድሶ ከልብ የሚናፍቅ ትውልድ ሊያነበው የተገባው መጽሐፍ፣ ሆኖ አግኝቻዋለሁ",
     date: "2024-01-05"
   }
 ];
@@ -200,7 +200,8 @@ export default function BookDetail() {
               <InteractiveTiltCard
                 image={{
                   src: book.image,
-                  alt: book.title
+                  alt: book.title,
+                  priority: true
                 }}
                 tiltFactor={20}
                 perspective={1200}
@@ -243,21 +244,7 @@ export default function BookDetail() {
               </div>
             </div>
 
-            {/* Reader Reviews Summary */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
-                <div className="flex items-center gap-1">
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  <span className="ml-2 text-lg font-semibold">4.7 out of 5</span>
-                </div>
-                <span className="text-gray-500">({reviews.length} reviews)</span>
-              </div>
-              <p className="text-center text-gray-600">Loved by readers for its spiritual insights and practical guidance</p>
-            </div>
+
           </div>
         </div>
 
@@ -282,21 +269,8 @@ export default function BookDetail() {
                     <User className="w-6 h-6 text-blue-600" />
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="mb-2">
                       <h4 className="font-semibold text-gray-800">{review.name}</h4>
-                      <div className="flex items-center gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${
-                              i < review.rating
-                                ? 'fill-yellow-400 text-yellow-400'
-                                : 'text-gray-300'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <span className="text-sm text-gray-500">{review.date}</span>
                     </div>
                     <p className="text-gray-700">{review.comment}</p>
                   </div>

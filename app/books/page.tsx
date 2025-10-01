@@ -2,6 +2,7 @@
 
 import { InteractiveTiltCard } from "@/components/tilt-card";
 import { useRouter } from "next/navigation";
+import { memo, useMemo } from "react";
 
 // Book data with images from public folder
 const books = [
@@ -15,22 +16,28 @@ const books = [
   { id: 8, name: "ወንጌል እና ባህል", image: { src: "/book8.JPG", alt: "Book 8" } }
 ];
 
-export default function Books() {
+const Books = memo(function Books() {
   const router = useRouter();
 
-  const handleCardClick = (bookId: number) => {
-    router.push(`/books/${bookId}`);
-  };
+  const handleCardClick = useMemo(
+    () => (bookId: number) => {
+      router.push(`/books/${bookId}`);
+    },
+    [router]
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-gray-50 p-8">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {books.map((book) => (
+          {books.map((book, index) => (
              <div key={book.id} className="flex flex-col items-center">
                <div className="w-full aspect-[3/4] mb-3 cursor-pointer" onClick={() => handleCardClick(book.id)}>
                  <InteractiveTiltCard
-                  image={book.image}
+                  image={{
+                    ...book.image,
+                    priority: index < 4 // Prioritize first 4 images
+                  }}
                   tiltFactor={15}
                   perspective={1000}
                   borderRadius={12}
@@ -57,4 +64,6 @@ export default function Books() {
       </div>
     </div>
   );
-}
+});
+
+export default Books;

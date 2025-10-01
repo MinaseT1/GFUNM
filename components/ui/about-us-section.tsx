@@ -118,9 +118,9 @@ export default function AboutUsSection() {
   ]
 
   const stats = [
-    { icon: <Heart />, value: 100000, label: "Lives Touched", suffix: "+" },
-    { icon: <Calendar />, value: 20, label: "Years of Ministry", suffix: "" },
-    { icon: <Globe />, value: 100, label: "Mission Trips", suffix: "+" },
+    { icon: <Heart />, value: 10, label: "Years of Ministry", suffix: "+" },
+    { icon: <Calendar />, value: 2034, label: "Vision Target Year", suffix: "" },
+    { icon: <Globe />, value: 4, label: "Horn Africa Nations", suffix: "" },
   ]
 
   return (
@@ -193,14 +193,14 @@ export default function AboutUsSection() {
         </motion.div>
 
         <motion.p className="text-center max-w-3xl mx-auto mb-8 text-lg text-gray-600" style={{ fontFamily: 'Satoshi, sans-serif' }} variants={itemVariants}>
-          Gospel For Unreached Nation Ministry is dedicated to bringing the transformative message of Jesus Christ to communities around the world who have yet to experience His love and salvation.
+          Gospel For Unreached Nation Ministry (GFUNM) is a Christ-centered indigenous ministry founded by Evangelist Tsegaab Bekele in the beautiful city of Awassa, Southern Ethiopia. For over 10 years, we have been dedicated to spreading the Kingdom Gospel throughout the Horn of Africa, bringing hope to regions marked by civil war, natural disasters, and religious tension.
         </motion.p>
 
         {/* Ministry Focus Features */}
         <motion.div className="mb-16" variants={itemVariants}>
           <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">Our Ministry Focus</h3>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Through literature, outreach, and community building, we strive to make a lasting impact in unreached nations.
+            Based in Ethiopia, the hub of the Horn of Africa region, we focus on mission-oriented, practical ministry through literature, church planting, discipleship, and equipping saints for global missions.
           </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -210,7 +210,7 @@ export default function AboutUsSection() {
               </div>
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Our Mission</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                To spread the Gospel of Jesus Christ to unreached nations through inspiring literature and transformative ministry work.
+                To see missional, Christ-centered churches flourishing in the Horn of Africa through practical ministry, discipleship, and church planting in Ethiopia, Somalia, Djibouti, and Eritrea.
               </p>
             </motion.div>
             
@@ -218,9 +218,9 @@ export default function AboutUsSection() {
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <Globe className="w-6 h-6 text-blue-600" />
               </div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-3">Global Reach</h4>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Horn of Africa Focus</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Connecting with communities worldwide, bringing hope and salvation to those who have never heard the Gospel message.
+                Strategically positioned in Ethiopia, we serve the Horn of Africa region, addressing the unique challenges of civil war, drought, and religious tension with the hope of Christ.
               </p>
             </motion.div>
             
@@ -248,15 +248,15 @@ export default function AboutUsSection() {
 
         {/* Vision Section */}
         <motion.div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl mb-16" variants={itemVariants}>
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Our Vision</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Our Vision (2024-2034)</h3>
           <p className="text-center text-gray-600 leading-relaxed mb-6 max-w-4xl mx-auto">
-            We envision a world where every nation has access to the Gospel message, where communities are transformed by God's love, and where local leaders are equipped to continue the ministry work in their regions. Through our books and outreach programs, we aim to plant seeds of faith that will grow into thriving Christian communities.
+            "Come over to Macedonia (to the Horn Africa) and help us." Our 10-year vision is to establish thriving, missional churches throughout the Horn of Africa, equipping local leaders for sustainable ministry. We seek committed faith partners who will march with us to make history in this region for the glory of our Lord Jesus Christ, transforming communities through the power of the Gospel.
           </p>
           <div className="flex justify-center">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 border border-blue-200">
               <Globe className="h-5 w-5 text-blue-600" />
               <span className="text-blue-700 font-medium">
-                Reaching Every Nation with God's Love
+                "A cloud as small as a man's hand is rising..." (1 Kings 18:44)
               </span>
             </div>
           </div>
@@ -424,14 +424,19 @@ export default function AboutUsSection() {
             <div className="h-[500px] w-full">
               <DomeGallery
                 images={[
-                  { src: "/book1.jpg", alt: "Bible Study Materials" },
-                  { src: "/book2.jpg", alt: "Christian Literature" },
-                  { src: "/book3.jpg", alt: "Ministry Resources" },
-                  { src: "/book4.jpg", alt: "Spiritual Growth Books" },
-                  { src: "/book5.jpg", alt: "Faith Building Content" },
-                  { src: "/book6.jpg", alt: "Revival Literature" },
-                  { src: "/book7.jpg", alt: "Unity and Outreach" },
-                  { src: "/book8.JPG", alt: "Gospel and Culture" }
+                  { src: "/photo/IMG_20250724_222511_962.jpg", alt: "Ministry in Action" },
+                  { src: "/photo/IMG_20250724_222522_400.jpg", alt: "Community Outreach" },
+                  { src: "/photo/IMG_20250724_222522_506.jpg", alt: "Gospel Preaching" },
+                  { src: "/photo/IMG_20250724_222522_679.jpg", alt: "Church Ministry" },
+                  { src: "/photo/photo_2025-10-01_14-46-38.jpg", alt: "Bible Study Sessions" },
+                  { src: "/photo/photo_2025-10-01_14-46-42.jpg", alt: "Prayer and Worship" },
+                  { src: "/photo/photo_2025-10-01_14-46-45.jpg", alt: "Discipleship Training" },
+                  { src: "/photo/photo_2025-10-01_14-46-54.jpg", alt: "Ministry Leadership" },
+                  { src: "/photo/photo_2025-10-01_14-47-00.jpg", alt: "Evangelism Outreach" },
+                  { src: "/photo/photo_2025-10-01_15-13-23.jpg", alt: "Fellowship and Unity" },
+                  { src: "/photo/photo_2025-10-01_15-13-26.jpg", alt: "Spiritual Growth" },
+                  { src: "/photo/photo_2025-10-01_15-13-44.jpg", alt: "Ministry Impact" },
+                  { src: "/photo/photo_2025-10-01_15-13-48.jpg", alt: "Gospel Mission" }
                 ]}
                 overlayBlurColor="#f8fafc"
                 imageBorderRadius="12px"

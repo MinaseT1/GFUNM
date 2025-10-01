@@ -3,6 +3,7 @@
 import { InteractiveTiltCard } from "@/components/tilt-card";
 import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
+import { memo, useMemo } from "react";
 
 // Book data - first 4 books for featured section
 const featuredBooks = [
@@ -12,7 +13,7 @@ const featuredBooks = [
   { id: 8, name: "ወንጌል እና ባህል", image: { src: "/book8.JPG", alt: "Book 8" } }
 ];
 
-export default function FeaturedBooks() {
+const FeaturedBooks = memo(function FeaturedBooks() {
   const router = useRouter();
 
   const handleCardClick = (bookId: number) => {
@@ -36,14 +37,17 @@ export default function FeaturedBooks() {
 
         {/* Books Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {featuredBooks.map((book) => (
+          {featuredBooks.map((book, index) => (
             <div key={book.id} className="flex flex-col items-center group">
               <div 
                 className="w-full aspect-[2/3] mb-4 cursor-pointer transform transition-transform duration-300 group-hover:scale-105" 
                 onClick={() => handleCardClick(book.id)}
               >
                 <InteractiveTiltCard
-                  image={book.image}
+                  image={{
+                    ...book.image,
+                    priority: index < 2 // Prioritize first 2 images
+                  }}
                   tiltFactor={15}
                   perspective={1000}
                   borderRadius={12}
@@ -77,4 +81,6 @@ export default function FeaturedBooks() {
       </div>
     </section>
   );
-}
+});
+
+export default FeaturedBooks;

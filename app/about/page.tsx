@@ -1,30 +1,104 @@
 "use client";
 
-import { Heart, Globe, Book, Users } from "lucide-react";
+import { Heart, Globe, Book, Users, BookOpen, Hand, Music, HandHeart, Lightbulb, Target, MapPin, Calendar } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
-// Animation styles will be handled with CSS classes
-
-const features = [
+// Ministry Focus Areas
+const ministryFocus = [
   {
     icon: Heart,
     title: "Our Mission",
-    description: "To spread the Gospel of Jesus Christ to unreached nations through inspiring literature and transformative ministry work."
+    description: "To see missional, Christ-centered churches flourishing in the Horn of Africa through practical ministry, discipleship, and church planting in Ethiopia, Somalia, Djibouti, and Eritrea."
   },
   {
     icon: Globe,
-    title: "Global Reach",
-    description: "Connecting with communities worldwide, bringing hope and salvation to those who have never heard the Gospel message."
+    title: "Horn of Africa Focus",
+    description: "Strategically positioned in Ethiopia, we serve the Horn of Africa region, addressing the unique challenges of civil war, drought, and religious tension with the hope of Christ."
   },
   {
     icon: Book,
     title: "Inspiring Literature",
-    description: "Our collection of 8 carefully crafted books provides spiritual guidance, biblical wisdom, and encouragement for believers."
+    description: "Our collection of 8 carefully crafted books provides spiritual guidance, biblical wisdom, and encouragement for believers in both Amharic and other languages."
   },
   {
     icon: Users,
     title: "Community Impact",
-    description: "Building strong Christian communities and empowering local leaders to continue the ministry in their regions."
+    description: "Building strong Christian communities and empowering local leaders to continue the ministry work in their regions through practical service and discipleship."
+  }
+];
+
+// Six Key Ministry Areas
+const ministryAreas = [
+  {
+    icon: BookOpen,
+    title: "Bible Study",
+    description: "Deepen your understanding of God's Word through our comprehensive Bible study programs. We offer both group sessions and personal study guides to help you grow in faith."
+  },
+  {
+    icon: Hand,
+    title: "Prayer Ministry",
+    description: "Experience the power of prayer through our dedicated prayer ministry. We provide prayer support, intercession, and guidance for your spiritual journey."
+  },
+  {
+    icon: Music,
+    title: "Worship",
+    description: "Join us in heartfelt worship as we praise God together. Our worship ministry creates an atmosphere where hearts are lifted and spirits are renewed."
+  },
+  {
+    icon: HandHeart,
+    title: "Community Outreach",
+    description: "Serve others and share God's love through our community outreach programs. We actively engage in helping those in need and spreading the Gospel."
+  },
+  {
+    icon: Users,
+    title: "Fellowship",
+    description: "Build meaningful relationships with fellow believers through our fellowship programs. Experience the joy of Christian community and mutual support."
+  },
+  {
+    icon: Target,
+    title: "Discipleship",
+    description: "Grow as a follower of Christ through our discipleship programs. Learn to live out your faith and help others in their spiritual journey."
+  }
+];
+
+// Services offered
+const services = [
+  {
+    icon: Book,
+    title: "Literature Ministry",
+    description: "Publishing and distributing Christian literature in local languages to spread the Gospel message throughout the Horn of Africa.",
+    features: ["8 Published Books", "Amharic Literature", "Biblical Teaching", "Spiritual Guidance"]
+  },
+  {
+    icon: MapPin,
+    title: "Church Planting",
+    description: "Establishing new churches in unreached areas, focusing on indigenous leadership and sustainable growth in local communities.",
+    features: ["Indigenous Leadership", "Local Partnerships", "Sustainable Growth", "Community Focus"]
+  },
+  {
+    icon: Users,
+    title: "Discipleship & Training",
+    description: "Equipping believers with biblical knowledge and practical skills for ministry, leadership development, and spiritual growth.",
+    features: ["Leadership Development", "Biblical Training", "Practical Skills", "Mentorship Programs"]
+  },
+  {
+    icon: Hand,
+    title: "Prayer & Intercession",
+    description: "Mobilizing prayer networks across the region for spiritual breakthrough, revival, and transformation in unreached communities.",
+    features: ["Intercessory Prayer", "Prayer Partnerships", "Spiritual Warfare", "Regional Prayer Networks"]
+  },
+  {
+    icon: Lightbulb,
+    title: "Mission Strategy",
+    description: "Strategic mission work focused on the Horn of Africa region, addressing unique challenges of civil war, drought, and religious tension with the hope of Christ.",
+    features: ["Regional Focus", "Cultural Sensitivity", "Strategic Planning", "Local Partnerships"]
+  },
+  {
+    icon: HandHeart,
+    title: "Community Outreach",
+    description: "Practical ministry that demonstrates God's love through community service, addressing the needs of regions marked by natural disasters and conflict.",
+    features: ["Community Service", "Disaster Relief", "Social Support", "Holistic Ministry"]
   }
 ];
 
@@ -50,7 +124,7 @@ export default function About() {
                 About 
               </span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
-                GFUNM
+                 GFUNM
               </span>
             </h1>
           </div>
@@ -60,12 +134,76 @@ export default function About() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            Gospel For Unreached Nation Ministry is dedicated to bringing the transformative message of Jesus Christ to communities around the world who have yet to experience His love and salvation.
+            Gospel For Unreached Nation Ministry (GFUNM) is a Christ-centered indigenous ministry founded by Evangelist Tsegaab Bekele, based in the beautiful city of Awassa, Southern Ethiopia. Our mission is focused on spreading the Kingdom Gospel throughout the Horn of Africa.
           </p>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Founder's Story */}
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              Our Founder's Calling
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              "A cloud as small as a man's hand is rising..." (1 Kings 18:44)
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-12 items-start mb-16">
+            {/* Founder's Image */}
+            <div className="lg:col-span-1 flex justify-center">
+              <div className="relative">
+                <div className="w-80 h-96 relative rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                  <Image
+                    src="/founder.jpg"
+                    alt="Evangelist Tsegaab Bekele - Founder of GFUNM"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center shadow-lg">
+                  <Heart className="w-12 h-12 text-blue-600" />
+                </div>
+              </div>
+            </div>
+
+            {/* Founder's Story */}
+            <div className="lg:col-span-2 space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-gray-800">
+                  Evangelist Tsegaab Bekele
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Born and raised in the Church, Evangelist Tsegaab Bekele's life was transformed by the power of the Holy Spirit revival at Yabello Mekane Yesus Church in 1992 while he was a high school student. It was during this powerful revival that God touched his heart and revealed the divine calling upon his life to preach the Gospel.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  After receiving Christian education at various levels in the local church, he began serving as a youth leader and gospel preacher. By God's grace, he was enabled to preach the good news in towns and rural villages even while still in high school.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Following his high school graduation, he attended teachers training college in Addis Ababa, Ethiopia. After graduating, he returned to his mother church, Yabello Mekane Yesus Church, where he served as Pastor from 1995-1998.
+                </p>
+              </div>
+              
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-blue-100">
+                <h4 className="text-xl font-semibold text-gray-800 mb-4">
+                  The Vision Birth
+                </h4>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  After extensive practical ministry in remote areas, the Lord opened the door for him to join seminary in Nairobi. It was during his time at seminary that he received from the Lord the specific vision to start GFUNM.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  The ministry vision focuses on spreading the Kingdom Gospel in the Horn of Africa countries of Ethiopia, Somalia, Djibouti, and Eritrea - regions often marked by civil war, natural disasters, drought, Muslim radicals, ethnic conflict, and religious tension.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ministry Focus Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div
@@ -77,12 +215,12 @@ export default function About() {
               Our Ministry Focus
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Through literature, outreach, and community building, we strive to make a lasting impact in unreached nations.
+              Based in Ethiopia, the hub of the Horn of Africa region, we focus on mission-oriented, practical ministry through literature, church planting, discipleship, and equipping saints for global missions.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {features.map((feature, index) => {
+            {ministryFocus.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
@@ -106,6 +244,97 @@ export default function About() {
                         {feature.description}
                       </p>
                     </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Six Key Ministry Areas */}
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              Six Key Ministry Areas
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our ministry is built on six foundational areas that work together to spread the Gospel and build strong Christian communities throughout the Horn of Africa.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {ministryAreas.map((area, index) => {
+              const Icon = area.icon;
+              return (
+                <div
+                  key={area.title}
+                  className={`bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-1000 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                  style={{ transitionDelay: `${800 + index * 150}ms` }}
+                >
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                      {area.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {area.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Services & Programs */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              Our Services & Programs
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Discover how Gospel For Unreached Nation Ministry serves the Horn of Africa through practical ministry, church planting, discipleship, and equipping saints for global missions in Ethiopia, Somalia, Djibouti, and Eritrea.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={service.title}
+                  className={`bg-white p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-1000 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                  style={{ transitionDelay: `${1000 + index * 150}ms` }}
+                >
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm mb-4">
+                      {service.description}
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                        {feature}
+                      </div>
+                    ))}
                   </div>
                 </div>
               );

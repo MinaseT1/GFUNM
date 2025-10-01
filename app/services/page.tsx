@@ -8,39 +8,39 @@ import { useEffect, useState } from "react";
 const services = [
   {
     icon: Book,
-    title: "Christian Literature",
-    description: "Our collection of 8 inspiring books provides biblical wisdom, spiritual guidance, and practical teachings for believers at every stage of their faith journey.",
-    features: ["Biblical Teaching Materials", "Spiritual Growth Resources", "Ministry Training Guides", "Devotional Content"]
+    title: "Literature Ministry",
+    description: "Spreading the Kingdom Gospel through carefully crafted books and educational materials that provide spiritual guidance and biblical wisdom for believers in the Horn of Africa.",
+    features: ["Inspirational Books", "Bible Study Materials", "Gospel Literature", "Local Language Publications"]
   },
   {
     icon: Globe,
-    title: "Mission Outreach",
-    description: "We actively engage in mission work to reach unreached nations with the Gospel message, establishing sustainable Christian communities worldwide.",
-    features: ["International Missions", "Community Evangelism", "Church Planting", "Cultural Bridge Building"]
+    title: "Church Planting",
+    description: "Establishing missional, Christ-centered churches throughout the Horn of Africa, focusing on sustainable local leadership and community transformation.",
+    features: ["New Church Establishment", "Local Leadership Training", "Community Engagement", "Sustainable Growth"]
   },
   {
     icon: Users,
-    title: "Leadership Training",
-    description: "Comprehensive training programs designed to equip local leaders with the skills and knowledge needed to lead effective ministries in their communities.",
-    features: ["Pastor Training", "Ministry Leadership", "Discipleship Programs", "Mentorship Support"]
+    title: "Discipleship & Training",
+    description: "Equipping saints for practical ministry through comprehensive discipleship programs, leadership development, and ministry skills training.",
+    features: ["Leadership Development", "Ministry Training", "Discipleship Programs", "Practical Ministry Skills"]
   },
   {
     icon: Heart,
-    title: "Prayer Ministry",
-    description: "Dedicated prayer support for individuals, communities, and nations. We believe in the power of prayer to transform lives and open doors for the Gospel.",
-    features: ["Intercessory Prayer", "Prayer Requests", "Prayer Partnerships", "Spiritual Warfare"]
+    title: "Prayer & Intercession",
+    description: "Building a strong foundation of prayer support for ministry activities throughout the Horn of Africa, seeking committed faith partners for intercession.",
+    features: ["Intercessory Prayer", "Prayer Partnerships", "Spiritual Warfare", "Regional Prayer Networks"]
   },
   {
     icon: Lightbulb,
-    title: "Educational Programs",
-    description: "Bible-based educational initiatives that combine spiritual growth with practical skills development for sustainable community transformation.",
-    features: ["Bible Study Courses", "Literacy Programs", "Vocational Training", "Youth Development"]
+    title: "Mission Strategy",
+    description: "Strategic mission work focused on the Horn of Africa region, addressing unique challenges of civil war, drought, and religious tension with the hope of Christ.",
+    features: ["Regional Focus", "Cultural Sensitivity", "Strategic Planning", "Local Partnerships"]
   },
   {
     icon: HandHeart,
-    title: "Humanitarian Aid",
-    description: "Compassionate assistance to communities in need, demonstrating God's love through practical support and emergency relief efforts.",
-    features: ["Emergency Relief", "Community Development", "Healthcare Support", "Food Security Programs"]
+    title: "Community Outreach",
+    description: "Practical ministry that demonstrates God's love through community service, addressing the needs of regions marked by natural disasters and conflict.",
+    features: ["Community Service", "Disaster Relief", "Social Support", "Holistic Ministry"]
   }
 ];
 
@@ -78,7 +78,7 @@ export default function Services() {
             }`}
             style={{ transitionDelay: `${1 * 100}ms` }}
           >
-            Discover how Gospel For Unreached Nation Ministry serves communities worldwide through literature, missions, training, and compassionate outreach programs.
+            Discover how Gospel For Unreached Nation Ministry serves the Horn of Africa through practical ministry, church planting, discipleship, and equipping saints for global missions in Ethiopia, Somalia, Djibouti, and Eritrea.
           </p>
         </div>
       </section>

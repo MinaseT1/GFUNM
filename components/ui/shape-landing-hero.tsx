@@ -2,11 +2,12 @@
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Circle } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo, useMemo } from "react";
 import { cn } from "@/lib/utils";
+import RotatingEarth from "@/components/wireframe-dotted-globe";
 
 
-function ElegantShape({
+const ElegantShape = memo(function ElegantShape({
     className,
     delay = 0,
     width = 400,
@@ -70,9 +71,9 @@ function ElegantShape({
             </motion.div>
         </motion.div>
     );
-}
+});
 
-function HeroGeometric({
+const HeroGeometric = memo(function HeroGeometric({
     badge = "Design Collective",
     title1 = "Elevate Your Digital Vision",
     title2 = "Crafting Exceptional Websites",
@@ -94,6 +95,7 @@ function HeroGeometric({
             <div className="absolute inset-0 bg-gradient-to-br from-blue-400/[0.08] via-transparent to-blue-600/[0.08] blur-3xl" />
 
             <div className="absolute inset-0 overflow-hidden">
+
                 <ElegantShape
                     delay={0.3}
                     width={300}
@@ -140,67 +142,168 @@ function HeroGeometric({
                 />
             </div>
 
-            <div className="relative z-10 container mx-auto">
-                <div className="max-w-3xl mx-auto text-center">
+            {/* Globe Background - Hidden on mobile, visible on large screens */}
+            <div className="hidden lg:block absolute inset-0 z-0">
+                <div className="flex items-center justify-center min-h-screen">
                     <motion.div
                         custom={0}
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
                         transition={{
-                            duration: 1,
-                            delay: 0.5,
+                            duration: 1.2,
+                            delay: 0.3,
                             ease: "easeOut",
                         }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 mb-6 sm:mb-8 md:mb-12"
+                        className="flex justify-center items-center"
                     >
-                        <Circle className="h-2 w-2 fill-blue-500" />
-                        <span className="text-xs sm:text-sm text-blue-700 tracking-wide">
-                            {badge}
-                        </span>
+                        <RotatingEarth 
+                            width={800} 
+                            height={800} 
+                            className="w-[600px] h-[600px] xl:w-[800px] xl:h-[800px] opacity-40"
+                            badge=""
+                            title1=""
+                            title2=""
+                            description=""
+                        />
                     </motion.div>
+                </div>
+            </div>
 
+            {/* Text Overlay for Large Screens */}
+            <div className="hidden lg:block relative z-20 container mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+                <div className="flex items-center justify-center min-h-screen">
                     <motion.div
-                        custom={1}
+                        custom={0}
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
                         transition={{
-                            duration: 1,
-                            delay: 0.7,
+                            duration: 1.2,
+                            delay: 0.6,
                             ease: "easeOut",
                         }}
+                        className="text-center max-w-4xl mx-auto"
                     >
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-tight px-2">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-800 to-gray-600">
-                                {title1}
+                        {/* Badge */}
+                        <motion.div
+                            variants={fadeUpVariants}
+                            transition={{ delay: 0.7 }}
+                            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8"
+                        >
+                            <span className="text-blue-600 font-semibold text-sm tracking-wide uppercase">
+                                {badge}
                             </span>
-                            <br />
-                            <span
-                                className={cn(
-                                    "bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400"
-                                )}
-                            >
-                                {title2}
-                            </span>
-                        </h1>
-                    </motion.div>
+                        </motion.div>
 
+                        {/* Main Titles */}
+                        <motion.h1
+                            variants={fadeUpVariants}
+                            transition={{ delay: 0.8 }}
+                            className="text-6xl xl:text-8xl font-bold text-gray-800 mb-4 leading-tight"
+                        >
+                            {title1}
+                        </motion.h1>
+                        
+                        <motion.h2
+                            variants={fadeUpVariants}
+                            transition={{ delay: 0.9 }}
+                            className="text-6xl xl:text-8xl font-bold text-blue-500 mb-8 leading-tight"
+                        >
+                            {title2}
+                        </motion.h2>
+
+                        {/* Description */}
+                        <motion.p
+                            variants={fadeUpVariants}
+                            transition={{ delay: 1.0 }}
+                            className="text-xl xl:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
+                        >
+                            Bringing the Gospel to unreached nations through inspiring books and transformative ministry.
+                        </motion.p>
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Mobile Globe Background */}
+            <div className="lg:hidden absolute inset-0 z-0">
+                <div className="flex items-center justify-center min-h-screen">
                     <motion.div
-                        custom={2}
+                        custom={0}
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
                         transition={{
-                            duration: 1,
-                            delay: 0.9,
+                            duration: 1.2,
+                            delay: 0.3,
                             ease: "easeOut",
                         }}
+                        className="flex justify-center items-center"
                     >
-                        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-2 sm:px-4">
-                            Bringing the Gospel to unreached nations through
-                            inspiring books and transformative ministry.
-                        </p>
+                        <RotatingEarth 
+                            width={400} 
+                            height={400} 
+                            className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] opacity-30"
+                            badge=""
+                            title1=""
+                            title2=""
+                            description=""
+                        />
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Mobile Text Overlay */}
+            <div className="lg:hidden relative z-20 container mx-auto px-4 sm:px-6 md:px-8">
+                <div className="flex items-center justify-center min-h-screen py-8">
+                    <motion.div
+                        custom={0}
+                        variants={fadeUpVariants}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{
+                            duration: 1.2,
+                            delay: 0.6,
+                            ease: "easeOut",
+                        }}
+                        className="text-center max-w-sm sm:max-w-md md:max-w-lg mx-auto"
+                    >
+                        {/* Badge */}
+                        <motion.div
+                            variants={fadeUpVariants}
+                            transition={{ delay: 0.7 }}
+                            className="inline-flex items-center px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6"
+                        >
+                            <span className="text-blue-600 font-semibold text-xs sm:text-sm tracking-wide uppercase">
+                                {badge}
+                            </span>
+                        </motion.div>
+
+                        {/* Main Titles */}
+                        <motion.h1
+                            variants={fadeUpVariants}
+                            transition={{ delay: 0.8 }}
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-3 leading-tight"
+                        >
+                            {title1}
+                        </motion.h1>
+                        
+                        <motion.h2
+                            variants={fadeUpVariants}
+                            transition={{ delay: 0.9 }}
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-500 mb-6 leading-tight"
+                        >
+                            {title2}
+                        </motion.h2>
+
+                        {/* Description */}
+                        <motion.p
+                            variants={fadeUpVariants}
+                            transition={{ delay: 1.0 }}
+                            className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed px-2"
+                        >
+                            Bringing the Gospel to unreached nations through inspiring books and transformative ministry.
+                        </motion.p>
                     </motion.div>
                 </div>
             </div>
@@ -208,6 +311,6 @@ function HeroGeometric({
             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/80 pointer-events-none" />
         </div>
     );
-}
+});
 
 export { HeroGeometric }
