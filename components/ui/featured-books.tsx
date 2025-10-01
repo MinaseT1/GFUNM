@@ -7,10 +7,10 @@ import { memo, useMemo } from "react";
 
 // Book data - first 4 books for featured section
 const featuredBooks = [
-  { id: 1, name: "ባለ ራእይነት ክፍል 1", image: { src: "/book1.jpg", alt: "Book 1" } },
-    { id: 6, name: "ሪቫይቫል", image: { src: "/book6.jpg", alt: "Book 6" } },
-  { id: 5, name: "የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 2", image: { src: "/book5.jpg", alt: "Book 5" } },
-  { id: 8, name: "ወንጌል እና ባህል", image: { src: "/book8.JPG", alt: "Book 8" } }
+  { id: 1, name: "ባለ ራእይነት ክፍል 1", image: { src: "/books/book1.jpg", alt: "Book 1" } },
+    { id: 6, name: "ሪቫይቫል", image: { src: "/books/book6.jpg", alt: "Book 6" } },
+  { id: 5, name: "የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 2", image: { src: "/books/book5.jpg", alt: "Book 5" } },
+  { id: 8, name: "ወንጌል እና ባህል", image: { src: "/books/book8.JPG", alt: "Book 8" } }
 ];
 
 const FeaturedBooks = memo(function FeaturedBooks() {

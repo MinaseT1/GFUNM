@@ -6,14 +6,14 @@ import { memo, useMemo } from "react";
 
 // Book data with images from public folder
 const books = [
-  { id: 1, name: "ባለ ራእይነት ክፍል 1", image: { src: "/book1.jpg", alt: "Book 1" } },
-  { id: 2, name: "ባለ ራእይነት ክፍል 2", image: { src: "/book2.jpg", alt: "Book 2" } },
-  { id: 3, name: "ቤተ ክርስቲያን ከፓለቲካ ውጭ ናትን?", image: { src: "/book3.jpg", alt: "Book 3" } },
-  { id: 4, name: "የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 1", image: { src: "/book4.jpg", alt: "Book 4" } },
-  { id: 5, name: "የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 2", image: { src: "/book5.jpg", alt: "Book 5" } },
-  { id: 6, name: "ሪቫይቫል", image: { src: "/book6.jpg", alt: "Book 6" } },
-  { id: 7, name: "የኢትዮጵያ አብያተ ክርስቲያናት የህብረትና አለምን በወንጌል የመድረስ ጥሪ", image: { src: "/book7.jpg", alt: "Book 7" } },
-  { id: 8, name: "ወንጌል እና ባህል", image: { src: "/book8.JPG", alt: "Book 8" } }
+  { id: 1, name: "ባለ ራእይነት ክፍል 1", image: { src: "/books/book1.jpg", alt: "Book 1" } },
+  { id: 2, name: "ባለ ራእይነት ክፍል 2", image: { src: "/books/book2.jpg", alt: "Book 2" } },
+  { id: 3, name: "ቤተ ክርስቲያን ከፓለቲካ ውጭ ናትን?", image: { src: "/books/book3.jpg", alt: "Book 3" } },
+  { id: 4, name: "የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 1", image: { src: "/books/book4.jpg", alt: "Book 4" } },
+  { id: 5, name: "የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 2", image: { src: "/books/book5.jpg", alt: "Book 5" } },
+  { id: 6, name: "ሪቫይቫል", image: { src: "/books/book6.jpg", alt: "Book 6" } },
+  { id: 7, name: "የኢትዮጵያ አብያተ ክርስቲያናት የህብረትና አለምን በወንጌል የመድረስ ጥሪ", image: { src: "/books/book7.jpg", alt: "Book 7" } },
+  { id: 8, name: "ወንጌል እና ባህል", image: { src: "/books/book8.JPG", alt: "Book 8" } }
 ];
 
 const Books = memo(function Books() {
