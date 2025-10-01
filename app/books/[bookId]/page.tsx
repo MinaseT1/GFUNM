@@ -29,7 +29,7 @@ const books = [
     image: "/book2.jpg",
     category: "Prayer and Intercession",
     author: "Tsega-Ab Bekele",
-    pages: 180,
+    pages: 296,
     language: "Amharic"
   },
   {
@@ -65,7 +65,7 @@ const books = [
     image: "/book5.jpg",
     category: "Testimonies",
     author: "Tsega-Ab Bekele",
-    pages: 220,
+    pages: 517,
     language: "Amharic"
   },
   {
@@ -74,10 +74,10 @@ const books = [
     description: "Essential biblical truths every believer should know, presented in an accessible and engaging format.",
     fullDescription: "The Gospel Foundations book teaches the fundamental truths of Christianity in a clear and simple way. It is very valuable for new believers and those who want to strengthen their faith.",
     price: 199,
-    image: "/book6.jpg",
+    image: "/books/book6.jpg",
     category: "Biblical Teaching",
     author: "Tsega-Ab Bekele",
-    pages: 200,
+    pages: 387,
     language: "Amharic"
   },
   {
@@ -89,7 +89,7 @@ const books = [
     image: "/book7.jpg",
     category: "Discipleship",
     author: "Tsega-Ab Bekele",
-    pages: 190,
+    pages: 283,
     language: "Amharic"
   },
   {
@@ -101,35 +101,198 @@ const books = [
     image: "/book8.JPG",
     category: "Spiritual Reading",
     author: "Tsega-Ab Bekele",
-    pages: 170,
+    pages: 422,
     language: "Amharic"
   }
 ];
 
-// Sample reviews data
-const reviews = [
-  {
-    id: 1,
-    name: "ተክለአብ ሽብሩ (ፒ.ኤ.ች.ዲ) አሜሪካ ተኔስኢ ስቴት ዩኒቨርሲት - ረ/ፕሮፌሰር",
-    rating: 5,
-    comment: "የኢትዮዽያ ቤተ-ክርስቲያን ከከበባት መንፈሳዊ እርጅናና ሞት የመውጫው መንገድ መጽሐፍ ቅዱሳዊ ተሐድሶ ብቻ እንደሆነ አበክሮ ያስረዳል።",
-    date: "2024-01-15"
-  },
-  {
-    id: 2,
-    name: "ወንድም መኮንን ደጉ በላይ ሻሸመኔ ሙሉ ወንጌል አማኞች ቤ/ክ አገልጋይ",
-    rating: 5,
-    comment: "የአገሬ ሕዝብ ጽድቅ እንደራበው ዘመኑን እንዳይጨርስ ይህ መጸሐፍ ተጽፏል። …",
-    date: "2024-01-10"
-  },
-  {
-    id: 3,
-    name: "ጎሳ እሼቱመ - በኢትዮዽያ ወንጌላውያን ተማሪዋችና ማህበር (ኢቫሱ) የደቡብ ቢሮ አስተባባሪ",
-    rating: 4,
-    comment: "የተሐድሶ ያለህ! ብሎ ለሚጮህ ትውልድ በጊዜው የተወለደ ወቅታዊ መጽሐፍ ነው፧ … የምድራችንን ሁለንተናዊ ተሐድሶ ከልብ የሚናፍቅ ትውልድ ሊያነበው የተገባው መጽሐፍ፣ ሆኖ አግኝቻዋለሁ",
-    date: "2024-01-05"
-  }
-];
+// Book-specific reviews data
+const reviewsByBook: { [key: number]: Array<{id: number, name: string, rating: number, comment: string, date: string}> } = {
+  1: [ // ባለ ራእይነት ክፍል 1
+    {
+      id: 1,
+      name: "ዶ/ር አበበ ተስፋዬ - አዲስ አበባ ዩኒቨርሲቲ ፕሮፌሰር",
+      rating: 5,
+      comment: "ይህ መጽሐፍ የእምነት ጉዞን በተግባራዊ መንገድ የሚያስተምር ጠቃሚ መመሪያ ነው። ለእያንዳንዱ አማኝ የግድ የሚያስፈልግ መጽሐፍ ነው።",
+      date: "2024-02-10"
+    },
+    {
+      id: 2,
+      name: "ወንድም ዳንኤል መንግስቱ - የአዲስ ሕይወት ቤተክርስቲያን አገልጋይ",
+      rating: 5,
+      comment: "በዕለት ተዕለት ሕይወት ውስጥ እምነትን እንዴት እንደምንኖር የሚያስተምር ድንቅ መጽሐፍ። በጣም ተጠቃሚ ሆኛል።",
+      date: "2024-02-05"
+    },
+    {
+      id: 3,
+      name: "እህት ሳራ ወልደማርያም - የመንፈሳዊ እድገት አስተማሪ",
+      rating: 4,
+      comment: "ለመንፈሳዊ እድገት የሚያስፈልጉ መሰረታዊ እውነቶችን በግልጽ የሚያስረዳ መጽሐፍ። ለአዲስ አማኞች በተለይ ጠቃሚ ነው።",
+      date: "2024-01-28"
+    }
+  ],
+  2: [ // ባለ ራእይነት ክፍል 2
+    {
+      id: 1,
+      name: "ወንድም ሙሉጌታ አሸናፊ - የጸሎት አገልግሎት መሪ",
+      rating: 5,
+      comment: "የአህዛብ ሕዝቦች ለወንጌል እንዲደርሱ የሚደረግ ጸሎት ስልት በጣም ጠቃሚ ነው። ይህ መጽሐፍ የጸሎት ሕይወቴን ለውጦታል።",
+      date: "2024-02-15"
+    },
+    {
+      id: 2,
+      name: "እህት ሩት ታደሰ - ዓለም አቀፍ ተልእኮ አገልጋይ",
+      rating: 5,
+      comment: "የተለያዩ ባህሎችና ሕዝቦችን ለመድረስ የሚያስፈልጉ ጸሎት መመሪያዎች በጣም ተግባራዊ ናቸው።",
+      date: "2024-02-08"
+    },
+    {
+      id: 3,
+      name: "ወንድም ተስፋዬ ገብረመድህን - የአህዛብ ተልእኮ አስተባባሪ",
+      rating: 4,
+      comment: "ለአህዛብ ሕዝቦች ጸሎት ማድረግ ስለሚያስፈልግ በዝርዝር የሚያስተምር መጽሐፍ። በጣም ተመክሮአል።",
+      date: "2024-01-30"
+    }
+  ],
+  3: [ // ቤተ ክርስቲያን ከፓለቲካ ውጭ ናትን?
+    {
+      id: 1,
+      name: "ዶ/ር ሰሎሞን ታደሰ - የቤተክርስቲያን ታሪክ ምሁር",
+      rating: 5,
+      comment: "ቤተክርስቲያንና ፖለቲካ መካከል ያለውን ግንኙነት በመጽሐፍ ቅዱሳዊ መሰረት የሚያስረዳ ጠቃሚ መጽሐፍ።",
+      date: "2024-02-12"
+    },
+    {
+      id: 2,
+      name: "ወንድም ዮሴፍ ወልደጊዮርጊስ - የቤተክርስቲያን መሪ",
+      rating: 5,
+      comment: "የቤተክርስቲያን መሪዎች ሊያነቡት የሚገባ መጽሐፍ። የመሪነት መርሆዎችን በግልጽ ያስረዳል።",
+      date: "2024-02-03"
+    },
+    {
+      id: 3,
+      name: "እህት ሄለን ዮሐንስ - የማህበረሰብ አገልግሎት አስተባባሪ",
+      rating: 4,
+      comment: "ቤተክርስቲያን በማህበረሰብ ውስጥ ያላትን ሚና በግልጽ የሚያስረዳ መጽሐፍ። በጣም ተጠቃሚ ሆኛል።",
+      date: "2024-01-25"
+    }
+  ],
+  4: [ // የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 1
+    {
+      id: 1,
+      name: "ወንድም ገብረየሱስ ሃይሉ - የአገልግሎት ሚኒስትሪ መሪ",
+      rating: 5,
+      comment: "የአገልግሎት ሥራን በተግባር እንዴት እንደምንሠራ የሚያስተምር ድንቅ መጽሐፍ። ለአገልጋዮች በጣም ጠቃሚ ነው።",
+      date: "2024-02-18"
+    },
+    {
+      id: 2,
+      name: "እህት ብርሃኔ ተክለ - ዓለም አቀፍ ተልእኮ አገልጋይ",
+      rating: 5,
+      comment: "ከአካባቢ አገልግሎት እስከ ዓለም አቀፍ ተልእኮ ድረስ ያለውን አገልግሎት በዝርዝር ያስረዳል።",
+      date: "2024-02-11"
+    },
+    {
+      id: 3,
+      name: "ወንድም አብርሃም ወልደሚካኤል - የቤተክርስቲያን ተክላ አስተባባሪ",
+      rating: 4,
+      comment: "የተግባራዊ አገልግሎት መመሪያዎች በጣም ጠቃሚ ናቸው። ለአገልጋዮች ትልቅ እርዳታ ነው።",
+      date: "2024-02-01"
+    }
+  ],
+  5: [ // የኢትዮጵያ ቤተ ክርስቲያን ተሀድሶ - ቅፅ 2
+    {
+      id: 1,
+      name: "እህት ማርታ ገብረሚካኤል - የመመስከር አገልግሎት መሪ",
+      rating: 5,
+      comment: "በተስፋ መቁረጥ ውስጥ ያሉ ሰዎች እንዴት ተስፋ እንደሚያገኙ የሚያሳዩ እውነተኛ ታሪኮች። በጣም አበረታች ነው።",
+      date: "2024-02-14"
+    },
+    {
+      id: 2,
+      name: "ወንድም ዳዊት ሃይሌ - የመንፈሳዊ ማገገሚያ አገልግሎት አስተባባሪ",
+      rating: 5,
+      comment: "የእግዚአብሔር ጸጋ በሰዎች ሕይወት ውስጥ እንዴት እንደሚሠራ የሚያሳዩ ድንቅ ታሪኮች።",
+      date: "2024-02-07"
+    },
+    {
+      id: 3,
+      name: "እህት ሳባ ወልደሰንበት - የማህበረሰብ ማገገሚያ አገልጋይ",
+      rating: 4,
+      comment: "ተስፋ የሌላቸው ሰዎች ተስፋ እንዴት እንደሚያገኙ የሚያሳዩ አበረታች ታሪኮች። ለሁሉም ተስፋ ይሰጣል።",
+      date: "2024-01-29"
+    }
+  ],
+  6: [ // ሪቫይቫል
+    {
+      id: 1,
+      name: "ተክለአብ ሽብሩ (ፒ.ኤ.ች.ዲ) አሜሪካ ተኔስኢ ስቴት ዩኒቨርሲት - ረ/ፕሮፌሰር",
+      rating: 5,
+      comment: "የኢትዮዽያ ቤተ-ክርስቲያን ከከበባት መንፈሳዊ እርጅናና ሞት የመውጫው መንገድ መጽሐፍ ቅዱሳዊ ተሐድሶ ብቻ እንደሆነ አበክሮ ያስረዳል።",
+      date: "2024-01-15"
+    },
+    {
+      id: 2,
+      name: "ወንድም መኮንን ደጉ በላይ ሻሸመኔ ሙሉ ወንጌል አማኞች ቤ/ክ አገልጋይ",
+      rating: 5,
+      comment: "የአገሬ ሕዝብ ጽድቅ እንደራበው ዘመኑን እንዳይጨርስ ይህ መጸሐፍ ተጽፏል። …",
+      date: "2024-01-10"
+    },
+    {
+      id: 3,
+      name: "ጎሳ እሼቱመ - በኢትዮዽያ ወንጌላውያን ተማሪዋችና ማህበር (ኢቫሱ) የደቡብ ቢሮ አስተባባሪ",
+      rating: 4,
+      comment: "የተሐድሶ ያለህ! ብሎ ለሚጮህ ትውልድ በጊዜው የተወለደ ወቅታዊ መጽሐፍ ነው፧ … የምድራችንን ሁለንተናዊ ተሐድሶ ከልብ የሚናፍቅ ትውልድ ሊያነበው የተገባው መጽሐፍ፣ ሆኖ አግኝቻዋለሁ",
+      date: "2024-01-05"
+    }
+  ],
+  7: [ // የኢትዮጵያ አብያተ ክርስቲያናት የህብረትና አለምን በወንጌል የመድረስ ጥሪ
+    {
+      id: 1,
+      name: "ተሾመ አመኑ (ቄስ ፒ.ኤ.ች.ዲ) - የኢትዮዽያ ወንጌላዊነት ቤተ-ክርስቲያን መካነ ኢየሱስ ተባባሪ ጠቅላይ ፀሐፊ",
+      rating: 5,
+      comment: "“የኢትዮጵያ ቤተ-ክርስቲያን ኅብረትና በወንጌል ዓለምን የመድረስ ጥሪ” በሚል ርዕስ የተፃፈው ይህ መጽሐፍ በዘመናችን የእግዚአብሔርን ፈቃድና ሰዎችን አገልግለን ለማለፍ ዓለም አቀፋዊ ራእይ ይዘን ተያይዘን እንድንነሣ ወቅታዊና ሰማያዊ ጥሪ ያስተጋባል። በተጨማሪም በዚህ አቅጣጫ ጥናት ለሚያደርጉ ምሁራን ለዋቢ መጽሐፍትነት እጅግ አጋዥና በብዙ የተዋጣለት ድንቅ መጽሐፍ ነው።",
+      date: "2024-02-16"
+    },
+    {
+      id: 2,
+      name: "ጋሻሁን ነሞምሳ(ቄስ) - የኢ/ወ/ቤ/ክ መካነ ኢየሱስ ዓለም ዓቀፍ ሚስዮናዊ ከምዕራብ አፍሪካ ማሊ-ባማኮ",
+      rating: 5,
+      comment: "… ለኢትዮዽያ ቤተ-ክርስቲያን የጊዜዉን መልእክት የያዘ መፅሐፍ። ",
+      date: "2024-02-09"
+    },
+    {
+      id: 3,
+      name: "ወንድም ሳሙኤል ገብረመድህን - የቤተክርስቲያን ህብረት አስተባባሪ",
+      rating: 4,
+      comment: "… ይህን መጽሐፍ ሲያነቡ ፣ የወንጌል ስብከት ተልዕኮ አንገብግቢነት፣ የጊዜውን ወሳኝነት፣ ለሚሲዮን አገልግሎት የእያንዳንዱ ምዕመን ተሳትፎ አስፈላጊነት እና ሌሎችም ቁልፍ ሃሳቦች ይረዳሉ። መልካም ንባብ።",
+      date: "2024-01-31"
+    }
+  ],
+  8: [ // ወንጌል እና ባህል
+    {
+      id: 1,
+      name: "ዶ/ር ሚካኤል ወልደሰንበት - የባህል ጥናት ምሁር",
+      rating: 5,
+      comment: "የእግዚአብሔርን ፍቅር ጥልቀትና ስፋት በመጽሐፍ ቅዱሳዊ ጥናትና በግል ማሰላሰል የሚያስረዳ ድንቅ መጽሐፍ።",
+      date: "2024-02-13"
+    },
+    {
+      id: 2,
+      name: "እህት ሄሊና ታደሰ - የመንፈሳዊ ንባብ አስተማሪ",
+      rating: 5,
+      comment: "የእግዚአብሔርን ያልተወሰነ ፍቅር ለሰው ልጆች እንዴት እንደምንረዳ የሚያስተምር መጽሐፍ። በጣም ጥልቅ ነው።",
+      date: "2024-02-06"
+    },
+    {
+      id: 3,
+      name: "ወንድም ዮሐንስ ሃይሉ - የመንፈሳዊ አባት",
+      rating: 4,
+      comment: "ወንጌልና ባህል መካከል ያለውን ግንኙነት በግልጽ የሚያስረዳ መጽሐፍ። ለመንፈሳዊ እድገት በጣም ጠቃሚ ነው።",
+      date: "2024-01-27"
+    }
+  ]
+};
 
 export default function BookDetail() {
   const params = useParams();
@@ -262,7 +425,7 @@ export default function BookDetail() {
         <div className="mt-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">What Readers Say</h2>
           <div className="space-y-6">
-            {reviews.map((review) => (
+            {(reviewsByBook[book.id] || []).map((review) => (
               <div key={review.id} className="bg-gray-50 rounded-xl p-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
