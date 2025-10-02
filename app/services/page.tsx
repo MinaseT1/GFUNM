@@ -1,9 +1,73 @@
 "use client";
 
-import { Book, Users, Globe, Heart, Lightbulb, HandHeart } from "lucide-react";
+import { Book, Users, Globe, Heart, Lightbulb, HandHeart, Camera, Target, MapPin, GraduationCap } from "lucide-react";
 import { useEffect, useState } from "react";
+import HorizontalGallery from "@/components/ui/horizontal-gallery";
 
 // Animation styles now handled with CSS classes
+
+// Gallery data for different ministry activities
+const galleryData = {
+  collage: {
+    title: "Community Collage",
+    description: "Our community collage showcases the beautiful diversity and unity of believers across the Horn of Africa. These images capture moments of fellowship, worship, and community life that demonstrate how the Gospel brings people together across cultural and ethnic boundaries. Each photograph tells a story of transformation, hope, and the power of Christ to unite hearts in love and purpose.",
+    images: [
+      "/collage/photo_2025-10-02_10-40-05.jpg",
+      "/collage/photo_2025-10-02_10-40-12.jpg",
+      "/collage/photo_2025-10-02_10-40-25.jpg",
+      "/collage/photo_2025-10-02_10-40-26.jpg"
+    ],
+    icon: Camera
+  },
+  crusade: {
+    title: "Gospel Crusades",
+    description: "Our gospel crusades represent powerful moments of evangelistic outreach where the Good News is proclaimed with boldness and clarity. These gatherings bring together believers and seekers alike, creating opportunities for salvation, healing, and spiritual breakthrough. Through these crusades, we witness God's miraculous power at work, transforming lives and establishing His kingdom in communities throughout the Horn of Africa.",
+    images: [
+      "/crusade/photo_2025-10-02_10-40-04.jpg",
+      "/crusade/photo_2025-10-02_10-40-06.jpg",
+      "/crusade/photo_2025-10-02_10-40-08.jpg",
+      "/crusade/photo_2025-10-02_10-40-10.jpg",
+      "/crusade/photo_2025-10-02_10-40-11.jpg",
+      "/crusade/photo_2025-10-02_10-40-15.jpg",
+      "/crusade/photo_2025-10-02_10-40-16.jpg",
+      "/crusade/photo_2025-10-02_10-40-17.jpg",
+      "/crusade/photo_2025-10-02_10-40-27.jpg",
+      "/crusade/photo_2025-10-02_10-40-32.jpg",
+      "/crusade/photo_2025-10-02_10-40-35.jpg",
+      "/crusade/photo_2025-10-02_10-40-38.jpg"
+    ],
+    icon: Target
+  },
+  mission: {
+    title: "Mission Activities",
+    description: "Our mission activities encompass the heart of our calling to reach unreached nations with the Gospel. These images document our strategic mission work across Ethiopia, Somalia, Djibouti, and Eritrea, showing how we engage with local communities, establish relationships, and plant seeds of faith. Each mission activity is carefully planned to address both spiritual and practical needs, demonstrating Christ's love through word and deed.",
+    images: [
+      "/mission/photo_2025-10-02_10-40-02.jpg",
+      "/mission/photo_2025-10-02_10-40-14.jpg",
+      "/mission/photo_2025-10-02_10-40-21.jpg",
+      "/mission/photo_2025-10-02_10-40-29.jpg",
+      "/mission/photo_2025-10-02_10-40-39.jpg",
+      "/mission/photo_2025-10-02_10-40-40.jpg",
+      "/mission/photo_2025-10-02_10-40-45.jpg"
+    ],
+    icon: MapPin
+  },
+  training: {
+    title: "Leadership Training",
+    description: "Our leadership training programs are designed to equip saints for effective ministry and sustainable church growth. These intensive training sessions focus on biblical foundations, practical ministry skills, and leadership development. We believe in raising up local leaders who can continue the work of the Gospel long after our initial outreach, ensuring that churches planted are well-equipped to thrive and multiply in their communities.",
+    images: [
+      "/training/photo_2025-10-02_10-40-09.jpg",
+      "/training/photo_2025-10-02_10-40-13.jpg",
+      "/training/photo_2025-10-02_10-40-22.jpg",
+      "/training/photo_2025-10-02_10-40-24.jpg",
+      "/training/photo_2025-10-02_10-40-30.jpg",
+      "/training/photo_2025-10-02_10-40-37.jpg",
+      "/training/photo_2025-10-02_10-40-41.jpg",
+      "/training/photo_2025-10-02_10-40-42.jpg"
+    ],
+    icon: GraduationCap
+  }
+};
 
 const services = [
   {
@@ -214,6 +278,185 @@ export default function Services() {
                   Transforming Lives Daily
                 </span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ministry Activities Gallery Sections */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
+          <div
+            className={`text-center mb-16 transition-all duration-700 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+            style={{ transitionDelay: `${15 * 100}ms` }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              Our Ministry in Action
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Witness the transformative power of the Gospel through our various ministry activities across the Horn of Africa. Each image tells a story of hope, faith, and God's love in action.
+            </p>
+          </div>
+
+          {/* Community Collage Section */}
+          <div className="mb-20">
+            <div
+              className={`flex items-center gap-4 mb-8 transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${16 * 100}ms` }}
+            >
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                <Camera className="w-8 h-8 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+                  {galleryData.collage.title}
+                </h3>
+              </div>
+            </div>
+            <div
+              className={`mb-8 transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${17 * 100}ms` }}
+            >
+              <p className="text-lg text-gray-600 leading-relaxed">
+                {galleryData.collage.description}
+              </p>
+            </div>
+            <div
+              className={`transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${18 * 100}ms` }}
+            >
+              <HorizontalGallery
+                images={galleryData.collage.images}
+                title={galleryData.collage.title}
+              />
+            </div>
+          </div>
+
+          {/* Gospel Crusades Section */}
+          <div className="mb-20">
+            <div
+              className={`flex items-center gap-4 mb-8 transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${19 * 100}ms` }}
+            >
+              <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center">
+                <Target className="w-8 h-8 text-red-600" />
+              </div>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+                  {galleryData.crusade.title}
+                </h3>
+              </div>
+            </div>
+            <div
+              className={`mb-8 transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${20 * 100}ms` }}
+            >
+              <p className="text-lg text-gray-600 leading-relaxed">
+                {galleryData.crusade.description}
+              </p>
+            </div>
+            <div
+              className={`transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${21 * 100}ms` }}
+            >
+              <HorizontalGallery
+                images={galleryData.crusade.images}
+                title={galleryData.crusade.title}
+              />
+            </div>
+          </div>
+
+          {/* Mission Activities Section */}
+          <div className="mb-20">
+            <div
+              className={`flex items-center gap-4 mb-8 transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${22 * 100}ms` }}
+            >
+              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center">
+                <MapPin className="w-8 h-8 text-green-600" />
+              </div>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+                  {galleryData.mission.title}
+                </h3>
+              </div>
+            </div>
+            <div
+              className={`mb-8 transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${23 * 100}ms` }}
+            >
+              <p className="text-lg text-gray-600 leading-relaxed">
+                {galleryData.mission.description}
+              </p>
+            </div>
+            <div
+              className={`transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${24 * 100}ms` }}
+            >
+              <HorizontalGallery
+                images={galleryData.mission.images}
+                title={galleryData.mission.title}
+              />
+            </div>
+          </div>
+
+          {/* Leadership Training Section */}
+          <div className="mb-20">
+            <div
+              className={`flex items-center gap-4 mb-8 transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${25 * 100}ms` }}
+            >
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center">
+                <GraduationCap className="w-8 h-8 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+                  {galleryData.training.title}
+                </h3>
+              </div>
+            </div>
+            <div
+              className={`mb-8 transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${26 * 100}ms` }}
+            >
+              <p className="text-lg text-gray-600 leading-relaxed">
+                {galleryData.training.description}
+              </p>
+            </div>
+            <div
+              className={`transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${27 * 100}ms` }}
+            >
+              <HorizontalGallery
+                images={galleryData.training.images}
+                title={galleryData.training.title}
+              />
             </div>
           </div>
         </div>

@@ -33,8 +33,8 @@ const Footer = () => {
     {
       icon: <Phone className="w-4 h-4" />,
       label: "Phone",
-      value: "+251 911 123 456",
-      href: "tel:+251911123456"
+      value: "+251 916824930",
+      href: "tel:+251916824930"
     },
     {
       icon: <MapPin className="w-4 h-4" />,
