@@ -92,11 +92,6 @@ export default function HorizontalGallery({ images, title, className = "" }: Hor
         <div
           ref={scrollContainerRef}
           className="flex gap-4 overflow-x-auto scrollbar-hide pb-4"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            WebkitScrollbar: { display: 'none' }
-          }}
         >
           {images.map((image, index) => (
             <div
