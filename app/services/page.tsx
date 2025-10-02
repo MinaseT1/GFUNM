@@ -15,7 +15,9 @@ const galleryData = {
       "/collage/photo_2025-10-02_10-40-05.jpg",
       "/collage/photo_2025-10-02_10-40-12.jpg",
       "/collage/photo_2025-10-02_10-40-25.jpg",
-      "/collage/photo_2025-10-02_10-40-26.jpg"
+      "/collage/photo_2025-10-02_10-40-26.jpg",
+      "/collage/photo_2025-10-02_13-56-56.jpg",
+      "/collage/photo_2025-10-02_13-56-57.jpg"
     ],
     icon: Camera
   },
@@ -34,7 +36,8 @@ const galleryData = {
       "/crusade/photo_2025-10-02_10-40-27.jpg",
       "/crusade/photo_2025-10-02_10-40-32.jpg",
       "/crusade/photo_2025-10-02_10-40-35.jpg",
-      "/crusade/photo_2025-10-02_10-40-38.jpg"
+      "/crusade/photo_2025-10-02_10-40-38.jpg",
+      "/crusade/photo_2025-10-02_13-57-11.jpg"
     ],
     icon: Target
   },
@@ -48,7 +51,10 @@ const galleryData = {
       "/mission/photo_2025-10-02_10-40-29.jpg",
       "/mission/photo_2025-10-02_10-40-39.jpg",
       "/mission/photo_2025-10-02_10-40-40.jpg",
-      "/mission/photo_2025-10-02_10-40-45.jpg"
+      "/mission/photo_2025-10-02_10-40-45.jpg",
+      "/mission/photo_2025-10-02_13-56-58.jpg",
+      "/mission/photo_2025-10-02_13-56-59.jpg",
+      "/mission/photo_2025-10-02_13-57-14.jpg"
     ],
     icon: MapPin
   },
