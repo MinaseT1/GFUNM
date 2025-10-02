@@ -12,6 +12,7 @@ const galleryData = {
     title: "Community Collage",
     description: "Our community collage showcases the beautiful diversity and unity of believers across the Horn of Africa. These images capture moments of fellowship, worship, and community life that demonstrate how the Gospel brings people together across cultural and ethnic boundaries. Each photograph tells a story of transformation, hope, and the power of Christ to unite hearts in love and purpose.",
     images: [
+      "/armybible collage.png",
       "/collage/photo_2025-10-02_10-40-05.jpg",
       "/collage/photo_2025-10-02_10-40-12.jpg",
       "/collage/photo_2025-10-02_10-40-25.jpg",
