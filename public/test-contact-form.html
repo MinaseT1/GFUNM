@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFUNM Contact Form Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2563eb;
+            text-align: center;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .test-section h3 {
+            margin-top: 0;
+            color: #374151;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .success {
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            color: #065f46;
+        }
+        .error {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #991b1b;
+        }
+        .info {
+            background: #dbeafe;
+            border: 1px solid #3b82f6;
+            color: #1e40af;
+        }
+        .warning {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 GFUNM Contact Form Test Suite</h1>
+        
+        <div class="test-section">
+            <h3>📧 Test Email Sending</h3>
+            <p>This will send a test email through the contact form API.</p>
+            <button onclick="testEmailSending()">Send Test Email</button>
+            <div id="email-result" class="result" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🔍 Test Form Validation</h3>
+            <p>This will test the form validation with invalid data.</p>
+            <button onclick="testValidation()">Test Validation</button>
+            <div id="validation-result" class="result" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🛡️ Test Spam Protection</h3>
+            <p>This will test the honeypot spam protection mechanism.</p>
+            <button onclick="testSpamProtection()">Test Spam Protection</button>
+            <div id="spam-result" class="result" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🚀 Run All Tests</h3>
+            <p>Run all tests sequentially to verify the complete system.</p>
+            <button onclick="runAllTests()">Run All Tests</button>
+            <div id="all-result" class="result" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>⚙️ Environment Setup</h3>
+            <div class="warning">
+                <strong>Important:</strong> Make sure you have configured your environment variables:
+                <ul>
+                    <li><code>RESEND_API_KEY</code> - Your Resend API key</li>
+                    <li><code>CONTACT_EMAIL</code> - Email to receive submissions</li>
+                </ul>
+                <p>See <code>EMAIL_SETUP.md</code> for detailed instructions.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Utility function to display results
+        function showResult(elementId, message, type = 'info') {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = `result ${type}`;
+            element.style.display = 'block';
+        }
+
+        // Test email sending functionality
+        async function testEmailSending() {
+            showResult('email-result', '📤 Sending test email...', 'info');
+            
+            const testData = {
+                name: 'Test User',
+                email: 'test@example.com',
+                subject: 'Test Email from Contact Form',
+                message: 'This is a test message to verify that the contact form email system is working correctly. If you receive this email, the system is functioning properly!',
+                honeypot: ''
+            };
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(testData),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showResult('email-result', 
+                        `✅ SUCCESS! Email sent successfully!\n` +
+                        `📧 Message: ${result.message}\n` +
+                        `${result.emailId ? `📨 Email ID: ${result.emailId}\n` : ''}` +
+                        `\n🎉 Check your email inbox for the test message!`, 
+                        'success'
+                    );
+                } else {
+                    showResult('email-result', 
+                        `❌ ERROR! Failed to send email:\n` +
+                        `Status: ${response.status}\n` +
+                        `Error: ${result.error}\n` +
+                        `${result.details ? '\nValidation errors:\n' + result.details.map(d => `- ${d.field}: ${d.message}`).join('\n') : ''}`,
+                        'error'
+                    );
+                }
+            } catch (error) {
+                showResult('email-result', 
+                    `💥 NETWORK ERROR! Failed to connect to the API:\n` +
+                    `Error: ${error.message}\n\n` +
+                    `🔍 Make sure:\n` +
+                    `1. The development server is running\n` +
+                    `2. Your environment variables are configured`,
+                    'error'
+                );
+            }
+        }
+
+        // Test form validation
+        async function testValidation() {
+            showResult('validation-result', '🔍 Testing form validation...', 'info');
+            
+            const invalidData = {
+                name: 'A', // Too short
+                email: 'invalid-email', // Invalid email format
+                subject: 'Hi', // Too short
+                message: 'Short', // Too short
+                honeypot: ''
+            };
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(invalidData),
+                });
+
+                const result = await response.json();
+
+                if (!response.ok && result.details) {
+                    showResult('validation-result', 
+                        `✅ Validation is working correctly!\n` +
+                        `Validation errors caught:\n` +
+                        result.details.map(d => `- ${d.field}: ${d.message}`).join('\n'),
+                        'success'
+                    );
+                } else {
+                    showResult('validation-result', 
+                        `⚠️ Validation might not be working as expected\n` +
+                        `Response: ${JSON.stringify(result, null, 2)}`,
+                        'warning'
+                    );
+                }
+            } catch (error) {
+                showResult('validation-result', 
+                    `Error testing validation: ${error.message}`,
+                    'error'
+                );
+            }
+        }
+
+        // Test spam protection
+        async function testSpamProtection() {
+            showResult('spam-result', '🛡️ Testing spam protection...', 'info');
+            
+            const spamData = {
+                name: 'Spam Bot',
+                email: 'spam@bot.com',
+                subject: 'Spam Message',
+                message: 'This is a spam message from a bot',
+                honeypot: 'I am a bot' // This should trigger spam protection
+            };
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(spamData),
+                });
+
+                const result = await response.json();
+
+                if (!response.ok && result.error === 'Spam detected') {
+                    showResult('spam-result', 
+                        `✅ Spam protection is working correctly!\n` +
+                        `Honeypot field successfully caught the spam attempt`,
+                        'success'
+                    );
+                } else {
+                    showResult('spam-result', 
+                        `⚠️ Spam protection might not be working as expected\n` +
+                        `Response: ${JSON.stringify(result, null, 2)}`,
+                        'warning'
+                    );
+                }
+            } catch (error) {
+                showResult('spam-result', 
+                    `Error testing spam protection: ${error.message}`,
+                    'error'
+                );
+            }
+        }
+
+        // Run all tests
+        async function runAllTests() {
+            showResult('all-result', '🚀 Running all tests...\n', 'info');
+            
+            const tests = [
+                { name: 'Email Sending', func: testEmailSending },
+                { name: 'Form Validation', func: testValidation },
+                { name: 'Spam Protection', func: testSpamProtection }
+            ];
+
+            let results = '🧪 Test Results:\n\n';
+            
+            for (const test of tests) {
+                results += `Testing ${test.name}...\n`;
+                try {
+                    await test.func();
+                    results += `✅ ${test.name} test completed\n\n`;
+                } catch (error) {
+                    results += `❌ ${test.name} test failed: ${error.message}\n\n`;
+                }
+            }
+
+            results += '🏁 All tests completed!\n\n';
+            results += '📝 Next steps:\n';
+            results += '1. Check individual test results above\n';
+            results += '2. Verify email delivery in your inbox\n';
+            results += '3. Review EMAIL_SETUP.md for configuration help';
+
+            showResult('all-result', results, 'info');
+        }
+
+        // Show initial message
+        console.log('🧪 GFUNM Contact Form Test Suite loaded!');
+        console.log('Use the buttons above to test different aspects of the contact form.');
+    </script>
+</body>
+</html>
