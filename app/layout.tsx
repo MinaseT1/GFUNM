@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/ui/navigation";
-import Footer from "@/components/ui/footer";
+import FooterColumn from "@/components/footer-column";
 import { Suspense } from "react";
 import Loading from "@/components/ui/loading";
+import ScrollLine from "@/components/ui/animated-lines-background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,13 +32,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollLine />
         <Navigation />
         <Suspense fallback={<Loading />}>
           <main className="pt-16">
             {children}
           </main>
         </Suspense>
-        <Footer />
+        <FooterColumn />
       </body>
     </html>
   );

@@ -64,9 +64,27 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-gray-50 to-blue-50 border-t border-blue-100">
+    <footer className="relative bg-white border-t border-blue-100 overflow-hidden">
+      {/* Enhanced Blue glow effect behind footer */}
+      <div className="absolute inset-0 -z-10">
+        {/* Base gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-blue-100/30"></div>
+        
+        {/* Primary glow orbs */}
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] bg-blue-500/18 rounded-full blur-3xl"></div>
+        <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[350px] h-[350px] bg-blue-300/15 rounded-full blur-3xl"></div>
+        
+        {/* Secondary glow layers for depth */}
+        <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-blue-600/12 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 right-1/4 w-[250px] h-[250px] bg-blue-400/14 rounded-full blur-2xl"></div>
+        
+        {/* Subtle accent glows */}
+        <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-[600px] h-[200px] bg-gradient-to-t from-blue-500/8 to-transparent blur-xl"></div>
+        <div className="absolute top-0 left-0 right-0 h-[100px] bg-gradient-to-b from-blue-300/10 to-transparent blur-lg"></div>
+      </div>
       <motion.div
-        className="container mx-auto px-4 py-16"
+        className="relative container mx-auto px-4 py-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}

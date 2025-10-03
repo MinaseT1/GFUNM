@@ -43,6 +43,14 @@
   --radius-xl: calc(var(--radius) + 4px);
   --color-destructive-foreground: var(--destructive-foreground);
   --radius: var(----radius);
+  @keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+    }
+  50% {
+    transform: translateY(-10px);
+    }
+  }
 }
 
 :root {
@@ -195,4 +203,9 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
+}
+
+/* Radial gradient utility for glow effects */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, var(--tw-gradient-stops));
 }
