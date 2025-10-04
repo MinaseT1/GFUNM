@@ -144,10 +144,10 @@ export default function About() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              Our Founder&apos;s Calling
+              Founder Background
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A cloud as small as a man&apos;s hand is rising... (1 Kings 18:44)
+              &quot;A cloud as small as a man&apos;s hand is rising... (1 Kings 18:44)&quot;
             </p>
           </div>
           
