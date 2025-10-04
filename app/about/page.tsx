@@ -140,16 +140,17 @@ export default function About() {
             {/* Founder's Image */}
             <div className="lg:col-span-1 flex justify-center">
               <div className="relative">
-                <div className="w-[500px] h-[600px] relative">
+                <div className="w-full max-w-[500px] aspect-[5/6] relative mx-auto">
                   <Image
                     src="/babi.png"
                     alt="Evangelist Tsegaab Bekele - Founder of GFUNM"
                     fill
                     className="object-contain"
                     priority
+                    sizes="(max-width: 768px) 90vw, (max-width: 1024px) 400px, 500px"
                   />
                   {/* Blue glowing effect at bottom */}
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-2">
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 h-2">
                     {/* Main glowing line */}
                     <div className="w-full h-full bg-gradient-to-r from-transparent via-blue-500 to-transparent rounded-full shadow-lg shadow-blue-500/50"></div>
                     {/* Additional glow layers for enhanced effect */}
@@ -250,7 +251,7 @@ export default function About() {
               GFUNM programs/six wings/  
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              But the word of God continued to increase and spread (Act. 12: 24) 
+              "But the word of God continued to increase and spread (Act. 12: 24)"
             </p>
           </div>
 

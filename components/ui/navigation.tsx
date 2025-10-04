@@ -21,7 +21,7 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-blue-100">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-full">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-lg sm:text-xl">
@@ -66,17 +66,18 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg hover:bg-blue-50 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="p-2 rounded-lg hover:bg-blue-50 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
               aria-label="Toggle menu"
+              type="button"
             >
               {isOpen ? (
-                <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
+                <X className="w-6 h-6 text-gray-600" />
               ) : (
-                <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
+                <Menu className="w-6 h-6 text-gray-600" />
               )}
             </button>
           </div>
