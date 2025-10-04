@@ -31,7 +31,7 @@ import {
   MapPin,
   Book,
 } from "lucide-react"
-import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion"
+import { motion, useInView, useSpring } from "framer-motion"
 import { AnimatedText } from "@/components/ui/animated-shiny-text"
 import DomeGallery from "@/components/dome-gallery"
 
@@ -42,16 +42,7 @@ export default function AboutUsSection() {
   const isInView = useInView(sectionRef, { once: false, amount: 0.1 })
   const isStatsInView = useInView(statsRef, { once: false, amount: 0.3 })
 
-  // Parallax effect for decorative elements
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  })
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -50])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 50])
-  const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 20])
-  const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -20])
 
   useEffect(() => {
     setIsVisible(true)
@@ -140,14 +131,6 @@ export default function AboutUsSection() {
       className="w-full py-24 px-4 text-[#202e44] overflow-hidden relative"
     >
       {/* Decorative background elements */}
-      <motion.div
-        className="absolute top-20 left-10 w-64 h-64 rounded-full blur-3xl"
-        style={{ y: y1, rotate: rotate1 }}
-      />
-      <motion.div
-        className="absolute bottom-20 right-10 w-80 h-80 rounded-full blur-3xl"
-        style={{ y: y2, rotate: rotate2 }}
-      />
       <motion.div
         className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-[#598dee]/30"
         animate={{
