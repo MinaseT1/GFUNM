@@ -118,7 +118,7 @@ export default function AboutUsSection() {
   ]
 
   const stats = [
-    { icon: <Heart />, value: 10, label: "Years of Ministry", suffix: "+" },
+    { icon: <Heart />, value: 15, label: "Years of Ministry", suffix: "+" },
     { icon: <Calendar />, value: 2034, label: "Vision Target Year", suffix: "" },
     { icon: <Globe />, value: 4, label: "Horn Africa Nations", suffix: "" },
   ]
@@ -436,7 +436,10 @@ export default function AboutUsSection() {
                   { src: "/photo/photo_2025-10-01_15-13-23.jpg", alt: "Fellowship and Unity" },
                   { src: "/photo/photo_2025-10-01_15-13-26.jpg", alt: "Spiritual Growth" },
                   { src: "/photo/photo_2025-10-01_15-13-44.jpg", alt: "Ministry Impact" },
-                  { src: "/photo/photo_2025-10-01_15-13-48.jpg", alt: "Gospel Mission" }
+                  { src: "/photo/photo_2025-10-01_15-13-48.jpg", alt: "Gospel Mission" },
+                  { src: "/photo/photo_2025-10-03_20-28-44.jpg", alt: "Ministry Outreach" },
+                  { src: "/photo/photo_2025-10-03_20-28-45.jpg", alt: "Community Service" },
+                  { src: "/photo/photo_2025-10-03_20-28-58.jpg", alt: "Gospel Ministry" }
                 ]}
                 overlayBlurColor="#f8fafc"
                 imageBorderRadius="12px"

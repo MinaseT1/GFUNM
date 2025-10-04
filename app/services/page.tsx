@@ -9,7 +9,7 @@ import HorizontalGallery from "@/components/ui/horizontal-gallery";
 // Gallery data for different ministry activities
 const galleryData = {
   collage: {
-    title: "Community Collage",
+    title: "Army Bible Collage Collage",
     description: "Our community collage showcases the beautiful diversity and unity of believers across the Horn of Africa. These images capture moments of fellowship, worship, and community life that demonstrate how the Gospel brings people together across cultural and ethnic boundaries. Each photograph tells a story of transformation, hope, and the power of Christ to unite hearts in love and purpose.",
     images: [
       "/armybible collage.png",
@@ -26,19 +26,33 @@ const galleryData = {
     title: "Gospel Crusades",
     description: "Our gospel crusades represent powerful moments of evangelistic outreach where the Good News is proclaimed with boldness and clarity. These gatherings bring together believers and seekers alike, creating opportunities for salvation, healing, and spiritual breakthrough. Through these crusades, we witness God's miraculous power at work, transforming lives and establishing His kingdom in communities throughout the Horn of Africa.",
     images: [
-      "/crusade/photo_2025-10-02_10-40-04.jpg",
-      "/crusade/photo_2025-10-02_10-40-06.jpg",
-      "/crusade/photo_2025-10-02_10-40-08.jpg",
-      "/crusade/photo_2025-10-02_10-40-10.jpg",
-      "/crusade/photo_2025-10-02_10-40-11.jpg",
-      "/crusade/photo_2025-10-02_10-40-15.jpg",
-      "/crusade/photo_2025-10-02_10-40-16.jpg",
-      "/crusade/photo_2025-10-02_10-40-17.jpg",
-      "/crusade/photo_2025-10-02_10-40-27.jpg",
-      "/crusade/photo_2025-10-02_10-40-32.jpg",
-      "/crusade/photo_2025-10-02_10-40-35.jpg",
+      "/crusade/photo_2025-10-04_08-53-23.jpg",
+      "/crusade/photo_2025-10-04_08-53-22.jpg",
+      "/crusade/photo_2025-10-04_08-53-22 (2).jpg",
+      "/crusade/photo_2025-10-04_08-53-21.jpg",
+      "/crusade/photo_2025-10-04_08-53-20.jpg",
+      "/crusade/photo_2025-10-04_08-53-19.jpg",
+      "/crusade/photo_2025-10-04_08-53-17.jpg",
+      "/crusade/photo_2025-10-04_08-53-16.jpg",
+      "/crusade/photo_2025-10-04_08-53-14.jpg",
+      "/crusade/photo_2025-10-03_20-29-31.jpg",
+      "/crusade/photo_2025-10-03_20-29-29.jpg",
+      "/crusade/photo_2025-10-03_20-29-24.jpg",
+      "/crusade/photo_2025-10-03_20-29-15.jpg",
+      "/crusade/photo_2025-10-03_20-29-10.jpg",
+      "/crusade/photo_2025-10-03_20-29-09.jpg",
+      "/crusade/photo_2025-10-02_13-57-11.jpg",
       "/crusade/photo_2025-10-02_10-40-38.jpg",
-      "/crusade/photo_2025-10-02_13-57-11.jpg"
+      "/crusade/photo_2025-10-02_10-40-35.jpg",
+      "/crusade/photo_2025-10-02_10-40-32.jpg",
+      "/crusade/photo_2025-10-02_10-40-27.jpg",
+      "/crusade/photo_2025-10-02_10-40-17.jpg",
+      "/crusade/photo_2025-10-02_10-40-16.jpg",
+      "/crusade/photo_2025-10-02_10-40-15.jpg",
+      "/crusade/photo_2025-10-02_10-40-11.jpg",
+      "/crusade/photo_2025-10-02_10-40-10.jpg",
+      "/crusade/photo_2025-10-02_10-40-06.jpg",
+      "/crusade/photo_2025-10-02_10-40-04.jpg"
     ],
     icon: Target
   },
@@ -55,7 +69,8 @@ const galleryData = {
       "/mission/photo_2025-10-02_10-40-45.jpg",
       "/mission/photo_2025-10-02_13-56-58.jpg",
       "/mission/photo_2025-10-02_13-56-59.jpg",
-      "/mission/photo_2025-10-02_13-57-14.jpg"
+      "/mission/photo_2025-10-02_13-57-14.jpg",
+      "/mission/photo_2025-10-03_20-29-08.jpg"
     ],
     icon: MapPin
   },
@@ -63,14 +78,25 @@ const galleryData = {
     title: "Leadership Training",
     description: "Our leadership training programs are designed to equip saints for effective ministry and sustainable church growth. These intensive training sessions focus on biblical foundations, practical ministry skills, and leadership development. We believe in raising up local leaders who can continue the work of the Gospel long after our initial outreach, ensuring that churches planted are well-equipped to thrive and multiply in their communities.",
     images: [
-      "/training/photo_2025-10-02_10-40-09.jpg",
-      "/training/photo_2025-10-02_10-40-13.jpg",
-      "/training/photo_2025-10-02_10-40-22.jpg",
-      "/training/photo_2025-10-02_10-40-24.jpg",
-      "/training/photo_2025-10-02_10-40-30.jpg",
-      "/training/photo_2025-10-02_10-40-37.jpg",
+      "/training/photo_2025-10-04_08-53-29.jpg",
+      "/training/photo_2025-10-04_08-53-28.jpg",
+      "/training/photo_2025-10-04_08-53-27.jpg",
+      "/training/photo_2025-10-04_08-53-26.jpg",
+      "/training/photo_2025-10-04_08-53-25 (2).jpg",
+      "/training/photo_2025-10-04_08-53-24.jpg",
+      "/training/photo_2025-10-03_20-29-25.jpg",
+      "/training/photo_2025-10-03_20-29-16.jpg",
+      "/training/photo_2025-10-03_20-29-13.jpg",
+      "/training/photo_2025-10-03_20-29-03.jpg",
+      "/training/photo_2025-10-02_10-40-42.jpg",
       "/training/photo_2025-10-02_10-40-41.jpg",
-      "/training/photo_2025-10-02_10-40-42.jpg"
+      "/training/photo_2025-10-02_10-40-37.jpg",
+      "/training/photo_2025-10-02_10-40-30.jpg",
+      "/training/photo_2025-10-02_10-40-24.jpg",
+      "/training/photo_2025-10-02_10-40-22.jpg",
+      "/training/photo_2025-10-02_10-40-13.jpg",
+      "/training/photo_2025-10-02_10-40-09.jpg",
+      "/training/photo_2025-10-02_10-40-08.jpg"
     ],
     icon: GraduationCap
   }
