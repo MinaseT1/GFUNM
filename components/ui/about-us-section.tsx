@@ -20,6 +20,16 @@ import {
   TrendingUp,
   HandHeart,
   Music,
+  Target,
+  GraduationCap,
+  Send,
+  Users2,
+  Megaphone,
+  Radio,
+  FileText,
+  Cross,
+  MapPin,
+  Book,
 } from "lucide-react"
 import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion"
 import { AnimatedText } from "@/components/ui/animated-shiny-text"
@@ -68,51 +78,51 @@ export default function AboutUsSection() {
 
   const services = [
     {
-      icon: <BookOpen className="w-6 h-6" />,
-      secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
-      title: "Bible Study",
-      description:
-        "Deepen your understanding of God's Word through our comprehensive Bible study programs. We offer both group sessions and personal study guides to help you grow in faith.",
-      position: "left",
-    },
-    {
-      icon: <Hand className="w-6 h-6" />,
+      icon: <GraduationCap className="w-6 h-6" />,
       secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
-      title: "Prayer Ministry",
+      title: "Army Bible College",
       description:
-        "Experience the power of prayer through our dedicated prayer ministry. We provide prayer support, intercession, and guidance for your spiritual journey.",
+        "ABC is for the gospel workers and native missionaries who have no chances to attend regular and traditional theological institutions but have special call, burden and dedications to serve the Lord",
       position: "left",
     },
     {
-      icon: <Music className="w-6 h-6" />,
+      icon: <Send className="w-6 h-6" />,
       secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
-      title: "Worship",
+      title: "Missions",
       description:
-        "Join us in heartfelt worship as we praise God together. Our worship ministry creates an atmosphere where hearts are lifted and spirits are renewed.",
+        "GFUNM Sending the native missionaries department is about sending native missionaries that have divine calling, devoted themselves to preach the gospel in the remote villages and plant the missional churches of Jesus Christ.",
       position: "left",
     },
     {
-      icon: <HandHeart className="w-6 h-6" />,
-      secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
-      title: "Community Outreach",
+      icon: <Users2 className="w-6 h-6" />,
+      secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
+      title: "Key Church leaders - Seminar",
       description:
-        "Serve others and share God's love through our community outreach programs. We actively engage in helping those in need and spreading the Gospel.",
+        "This department focused on upgrading and empowering church leaders through regular seminars, training, and workshops to enhance their ministry skills and impact.",
+      position: "left",
+    },
+    {
+      icon: <Megaphone className="w-6 h-6" />,
+      secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
+      title: "Conferences and Crusades",
+      description:
+        "The objective of this department was to win souls for the kingdom of God and stirring the area-wide churches for gospel outreach. In the last 15 years we had conducted 25 Area- wide conferences and Crusades in the different parts of the country.",
       position: "right",
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
-      title: "Fellowship",
+      icon: <Radio className="w-6 h-6" />,
+      secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
+      title: "Media",
       description:
-        "Build meaningful relationships with fellow believers through our fellowship programs. Experience the joy of Christian community and mutual support.",
+        "We are in the world led by media. The main aim of GFUNM media section is to spread the gospel in the parts of our world, to edify the saints and mobilizing the body of Christ for mission.",
       position: "right",
     },
     {
-      icon: <X className="w-6 h-6" />,
-      secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
-      title: "Discipleship",
+      icon: <FileText className="w-6 h-6" />,
+      secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
+      title: "Printed Materials",
       description:
-        "Grow in your faith through our discipleship programs. We provide mentorship and guidance to help you become a mature follower of Christ.",
+        "The printed materials department - is focused on spreading the good news through printed Materials, empowering and strengthening churches by producing and distributing printed spiritual materials such as pamphlets, magazines and books.",
       position: "right",
     },
   ]
@@ -206,7 +216,7 @@ export default function AboutUsSection() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <motion.div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300" variants={itemVariants}>
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <Heart className="w-6 h-6 text-blue-600" />
+                <Cross className="w-6 h-6 text-blue-600" />
               </div>
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Our Mission</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -216,7 +226,7 @@ export default function AboutUsSection() {
             
             <motion.div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300" variants={itemVariants}>
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <Globe className="w-6 h-6 text-blue-600" />
+                <MapPin className="w-6 h-6 text-blue-600" />
               </div>
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Horn of Africa Focus</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -226,7 +236,7 @@ export default function AboutUsSection() {
             
             <motion.div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300" variants={itemVariants}>
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <BookOpen className="w-6 h-6 text-blue-600" />
+                <Book className="w-6 h-6 text-blue-600" />
               </div>
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Inspiring Literature</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -236,7 +246,7 @@ export default function AboutUsSection() {
             
             <motion.div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300" variants={itemVariants}>
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-blue-600" />
+                <HandHeart className="w-6 h-6 text-blue-600" />
               </div>
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Community Impact</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -260,6 +270,14 @@ export default function AboutUsSection() {
               </span>
             </div>
           </div>
+        </motion.div>
+
+        {/* Ministry Areas Section */}
+        <motion.div className="mb-16" variants={itemVariants}>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">Our Six Key Ministry Areas</h3>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            GFUNM operates through six strategic ministry departments, each designed to fulfill our mission of spreading the Gospel and building Christ-centered churches throughout the Horn of Africa.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">

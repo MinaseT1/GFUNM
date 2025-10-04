@@ -215,7 +215,7 @@ export default function About() {
               Our Ministry Focus
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Based in Ethiopia, the hub of the Horn of Africa region, we focus on mission-oriented, practical ministry through literature, church planting, discipleship, and equipping saints for global missions.
+              Based in Ethiopia, the hub of the Horn of Africa region, we focus on mission-oriented, practical ministry through preaching the Gospel, church planting, discipleship, and equipping saints and literature  for global missions.
             </p>
           </div>
 
@@ -257,10 +257,10 @@ export default function About() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              Six Key Ministry Areas
+              GFUNM programs/six wings/  
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our ministry is built on six foundational areas that work together to spread the Gospel and build strong Christian communities throughout the Horn of Africa.
+              But the word of God continued to increase and spread (Act. 12: 24) 
             </p>
           </div>
 
@@ -355,7 +355,7 @@ export default function About() {
               Our Vision
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              We envision a world where every nation has access to the Gospel message, where communities are transformed by God&apos;s love, and where local leaders are equipped to continue the ministry work in their regions. Through our books and outreach programs, we aim to plant seeds of faith that will grow into thriving Christian communities.
+             To see missional, Christ centered churches flourishing in the Horen Africa countries and beyond.  (Matt 28, 18-19 “Churches were multiplied” (Act 9;31)
             </p>
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 border border-blue-200">
               <Globe className="h-5 w-5 text-blue-600" />
