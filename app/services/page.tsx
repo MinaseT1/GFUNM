@@ -9,7 +9,7 @@ import HorizontalGallery from "@/components/ui/horizontal-gallery";
 // Gallery data for different ministry activities
 const galleryData = {
   collage: {
-    title: "Army Bible Collage Collage",
+    title: "Army Bible Collage",
     description: "Our community collage showcases the beautiful diversity and unity of believers across the Horn of Africa. These images capture moments of fellowship, worship, and community life that demonstrate how the Gospel brings people together across cultural and ethnic boundaries. Each photograph tells a story of transformation, hope, and the power of Christ to unite hearts in love and purpose.",
     images: [
       "/armybible collage.png",
@@ -60,7 +60,7 @@ const galleryData = {
       "/mission/photo_2025-10-02_10-40-14.jpg",
       "/mission/photo_2025-10-02_10-40-21.jpg",
       "/mission/photo_2025-10-02_10-40-39.jpg",
-      "/mission/photo_2025-10-02_10-40-40.jpg",
+      
       "/mission/photo_2025-10-02_10-40-45.jpg",
       
       
@@ -83,6 +83,7 @@ const galleryData = {
       "/training/photo_2025-10-03_20-29-16.jpg",
       "/training/photo_2025-10-03_20-29-13.jpg",
       "/training/photo_2025-10-03_20-29-03.jpg",
+      "/mission/photo_2025-10-02_10-40-40.jpg",
       "/training/photo_2025-10-02_10-40-42.jpg",
       "/training/photo_2025-10-02_10-40-41.jpg",
       "/training/photo_2025-10-02_10-40-37.jpg",
