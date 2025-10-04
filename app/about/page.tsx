@@ -33,7 +33,7 @@ const ministryAreas = [
   {
     icon: Megaphone,
     title: "Conferences and Crusades",
-    description: "The objective of this department was to win souls for the kingdom of God and  stirring  the area-wide churches for gospel outreach. In the last 15 years we had conducted 25 Area- wide conferences and Crusades in the different parts of the country."
+    description: "The objective of this department was to win souls for the kingdom of God and  stirring  the area-wide churches for gospel outreach."
   },
   {
     icon: Radio,
@@ -43,7 +43,7 @@ const ministryAreas = [
   {
     icon: FileText,
     title: "Printed Materials",
-    description: "The printed materials department - is focused on spreading the good news through printed Materials, empowering and strengthening churches by producing and distributing printed spiritual materials such as pamphlets, magazines and books."
+    description: "The printed materials department - is focused on spreading the good news through printed  such as pamphlets, magazines and books."
   }
 ];
 
@@ -292,7 +292,7 @@ export default function About() {
               Our Services & Programs
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover how Gospel For Unreached Nation Ministry serves the Horn of Africa through practical ministry, church planting, discipleship, and equipping saints for global missions in Ethiopia, Somalia, Djibouti, and Eritrea.
+               Discover how Gospel For Unreached Nation Ministry serves the Horn of Africa and beyond through practical ministry, church planting, discipleship, and equipping saints for global missions.
             </p>
           </div>
 

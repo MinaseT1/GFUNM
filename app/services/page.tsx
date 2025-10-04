@@ -171,7 +171,7 @@ export default function Services() {
             }`}
             style={{ transitionDelay: `${1 * 100}ms` }}
           >
-            Discover how Gospel For Unreached Nation Ministry serves the Horn of Africa through practical ministry, church planting, discipleship, and equipping saints for global missions in Ethiopia, Somalia, Djibouti, and Eritrea.
+            Discover how Gospel For Unreached Nation Ministry serves the Horn of Africa and beyond through practical ministry, church planting, discipleship, and equipping saints for global missions.
           </p>
         </div>
       </section>

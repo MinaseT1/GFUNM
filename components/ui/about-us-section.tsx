@@ -106,7 +106,7 @@ export default function AboutUsSection() {
       secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
       title: "Conferences and Crusades",
       description:
-        "The objective of this department was to win souls for the kingdom of God and stirring the area-wide churches for gospel outreach. In the last 15 years we had conducted 25 Area- wide conferences and Crusades in the different parts of the country.",
+        "The objective of this department was to win souls for the kingdom of God and stirring the area-wide churches for gospel outreach.",
       position: "right",
     },
     {
@@ -122,7 +122,7 @@ export default function AboutUsSection() {
       secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
       title: "Printed Materials",
       description:
-        "The printed materials department - is focused on spreading the good news through printed Materials, empowering and strengthening churches by producing and distributing printed spiritual materials such as pamphlets, magazines and books.",
+        "The printed materials department - is focused on spreading the good news through printed such as pamphlets, magazines and books.",
       position: "right",
     },
   ]
