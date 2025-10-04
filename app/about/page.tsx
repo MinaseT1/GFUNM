@@ -32,33 +32,33 @@ const ministryFocus = [
 const ministryAreas = [
   {
     icon: BookOpen,
-    title: "Bible Study",
-    description: "Deepen your understanding of God's Word through our comprehensive Bible study programs. We offer both group sessions and personal study guides to help you grow in faith."
+    title: "Army Bible College",
+    description: "ABC is for the gospel workers and native missionaries who have no chances to attend regular and traditional theological institutions but have special call, burden and dedications to serve the Lord"
   },
   {
     icon: Hand,
-    title: "Prayer Ministry",
-    description: "Experience the power of prayer through our dedicated prayer ministry. We provide prayer support, intercession, and guidance for your spiritual journey."
+    title: "Missions ",
+    description: "GFUNM Sending the native missionaries department is about sending native missionaries that have divine calling, devoted themselves to preach the gospel in the remote villages and plant the missional churches of Jesus Christ.  "
   },
   {
     icon: Music,
-    title: "Worship",
-    description: "Join us in heartfelt worship as we praise God together. Our worship ministry creates an atmosphere where hearts are lifted and spirits are renewed."
+    title: "Key Church leaders - Seminar",
+    description: "This department focused on upgrading and empowering church leaders through  regular seminars, training, and workshops to enhance their ministry skills and impact."
   },
   {
     icon: HandHeart,
-    title: "Community Outreach",
-    description: "Serve others and share God's love through our community outreach programs. We actively engage in helping those in need and spreading the Gospel."
+    title: "Conferences and Crusades",
+    description: "The objective of this department was to win souls for the kingdom of God and  stirring  the area-wide churches for gospel outreach. In the last 15 years we had conducted 25 Area- wide conferences and Crusades in the different parts of the country."
   },
   {
     icon: Users,
-    title: "Fellowship",
-    description: "Build meaningful relationships with fellow believers through our fellowship programs. Experience the joy of Christian community and mutual support."
+    title: "Media",
+    description: "We are in the world led by media. The main aim of GFUNM media section is  to spread the gospel in the parts of our world,  to edify the saints and mobilizing the body of Christ for mission."
   },
   {
     icon: Target,
-    title: "Discipleship",
-    description: "Grow as a follower of Christ through our discipleship programs. Learn to live out your faith and help others in their spiritual journey."
+    title: "Printed Materials",
+    description: "The printed materials department - is focused on spreading the good news through printed Materials, empowering and strengthening churches by producing and distributing printed spiritual materials such as pamphlets, magazines and books."
   }
 ];
 
@@ -144,10 +144,10 @@ export default function About() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              Our Founder's Calling
+              Our Founder&apos;s Calling
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              "A cloud as small as a man's hand is rising..." (1 Kings 18:44)
+              A cloud as small as a man&apos;s hand is rising... (1 Kings 18:44)
             </p>
           </div>
           
@@ -180,7 +180,7 @@ export default function About() {
                   Born and raised in the Church, Evangelist Tsegaab Bekele's life was transformed by the power of the Holy Spirit revival at Yabello Mekane Yesus Church in 1992 while he was a high school student. It was during this powerful revival that God touched his heart and revealed the divine calling upon his life to preach the Gospel.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  After receiving Christian education at various levels in the local church, he began serving as a youth leader and gospel preacher. By God's grace, he was enabled to preach the good news in towns and rural villages even while still in high school.
+                  After receiving Christian education at various levels in the local church, he began serving as a youth leader and gospel preacher. By God&apos;s grace, he was enabled to preach the good news in towns and rural villages even while still in high school.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Following his high school graduation, he attended teachers training college in Addis Ababa, Ethiopia. After graduating, he returned to his mother church, Yabello Mekane Yesus Church, where he served as Pastor from 1995-1998.
@@ -355,12 +355,12 @@ export default function About() {
               Our Vision
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              We envision a world where every nation has access to the Gospel message, where communities are transformed by God's love, and where local leaders are equipped to continue the ministry work in their regions. Through our books and outreach programs, we aim to plant seeds of faith that will grow into thriving Christian communities.
+              We envision a world where every nation has access to the Gospel message, where communities are transformed by God&apos;s love, and where local leaders are equipped to continue the ministry work in their regions. Through our books and outreach programs, we aim to plant seeds of faith that will grow into thriving Christian communities.
             </p>
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 border border-blue-200">
               <Globe className="h-5 w-5 text-blue-600" />
               <span className="text-blue-700 font-medium">
-                Reaching Every Nation with God's Love
+                Reaching Every Nation with God&apos;s Love
               </span>
             </div>
           </div>

@@ -248,9 +248,9 @@ export default function AboutUsSection() {
 
         {/* Vision Section */}
         <motion.div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl mb-16" variants={itemVariants}>
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Our Vision (2024-2034)</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Our Vision</h3>
           <p className="text-center text-gray-600 leading-relaxed mb-6 max-w-4xl mx-auto">
-            "Come over to Macedonia (to the Horn Africa) and help us." Our 10-year vision is to establish thriving, missional churches throughout the Horn of Africa, equipping local leaders for sustainable ministry. We seek committed faith partners who will march with us to make history in this region for the glory of our Lord Jesus Christ, transforming communities through the power of the Gospel.
+            To see missional, Christ centered churches flourishing in the Horn of Africa countries and beyond.  (Matt 28, 18-19 “Churches were multiplied” (Act 9;31).
           </p>
           <div className="flex justify-center">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 border border-blue-200">
