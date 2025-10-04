@@ -55,15 +55,15 @@ const galleryData = {
     title: "Mission Activities",
     description: "Our mission activities encompass the heart of our calling to reach unreached nations with the Gospel. These images document our strategic mission work across Ethiopia, Somalia, Djibouti, and Eritrea, showing how we engage with local communities, establish relationships, and plant seeds of faith. Each mission activity is carefully planned to address both spiritual and practical needs, demonstrating Christ's love through word and deed.",
     images: [
-      "/mission/photo_2025-10-02_10-40-02.jpg",
+      "/mission/photo_2025-10-02_13-56-59.jpg",
+      "/mission/photo_2025-10-02_13-56-58.jpg",
       "/mission/photo_2025-10-02_10-40-14.jpg",
       "/mission/photo_2025-10-02_10-40-21.jpg",
-      "/mission/photo_2025-10-02_10-40-29.jpg",
       "/mission/photo_2025-10-02_10-40-39.jpg",
       "/mission/photo_2025-10-02_10-40-40.jpg",
       "/mission/photo_2025-10-02_10-40-45.jpg",
-      "/mission/photo_2025-10-02_13-56-58.jpg",
-      "/mission/photo_2025-10-02_13-56-59.jpg",
+      
+      
       "/mission/photo_2025-10-02_13-57-14.jpg",
       "/mission/photo_2025-10-03_20-29-08.jpg"
     ],
