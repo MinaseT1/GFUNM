@@ -1,18 +1,18 @@
 "use client";
 
-import { Heart, Globe, Book, Users, BookOpen, Hand, Music, HandHeart, Lightbulb, Target, MapPin, Calendar } from "lucide-react";
+import { Heart, Globe, Book, Users, BookOpen, Hand, Music, HandHeart, Lightbulb, Target, MapPin, Calendar, Cross, GraduationCap, Send, Users2, Megaphone, Radio, FileText, Church, Compass } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // Ministry Focus Areas
 const ministryFocus = [
   {
-    icon: Heart,
+    icon: Cross,
     title: "Our Mission",
     description: "To see missional, Christ-centered churches flourishing in the Horn of Africa through practical ministry, discipleship, and church planting in Ethiopia, Somalia, Djibouti, and Eritrea."
   },
   {
-    icon: Globe,
+    icon: MapPin,
     title: "Horn of Africa Focus",
     description: "Strategically positioned in Ethiopia, we serve the Horn of Africa region, addressing the unique challenges of civil war, drought, and religious tension with the hope of Christ."
   },
@@ -22,7 +22,7 @@ const ministryFocus = [
     description: "Our collection of 8 carefully crafted books provides spiritual guidance, biblical wisdom, and encouragement for believers in both Amharic and other languages."
   },
   {
-    icon: Users,
+    icon: HandHeart,
     title: "Community Impact",
     description: "Building strong Christian communities and empowering local leaders to continue the ministry work in their regions through practical service and discipleship."
   }
@@ -31,32 +31,32 @@ const ministryFocus = [
 // Six Key Ministry Areas
 const ministryAreas = [
   {
-    icon: BookOpen,
+    icon: GraduationCap,
     title: "Army Bible College",
     description: "ABC is for the gospel workers and native missionaries who have no chances to attend regular and traditional theological institutions but have special call, burden and dedications to serve the Lord"
   },
   {
-    icon: Hand,
+    icon: Send,
     title: "Missions ",
     description: "GFUNM Sending the native missionaries department is about sending native missionaries that have divine calling, devoted themselves to preach the gospel in the remote villages and plant the missional churches of Jesus Christ.  "
   },
   {
-    icon: Music,
+    icon: Users2,
     title: "Key Church leaders - Seminar",
     description: "This department focused on upgrading and empowering church leaders through  regular seminars, training, and workshops to enhance their ministry skills and impact."
   },
   {
-    icon: HandHeart,
+    icon: Megaphone,
     title: "Conferences and Crusades",
     description: "The objective of this department was to win souls for the kingdom of God and  stirring  the area-wide churches for gospel outreach. In the last 15 years we had conducted 25 Area- wide conferences and Crusades in the different parts of the country."
   },
   {
-    icon: Users,
+    icon: Radio,
     title: "Media",
     description: "We are in the world led by media. The main aim of GFUNM media section is  to spread the gospel in the parts of our world,  to edify the saints and mobilizing the body of Christ for mission."
   },
   {
-    icon: Target,
+    icon: FileText,
     title: "Printed Materials",
     description: "The printed materials department - is focused on spreading the good news through printed Materials, empowering and strengthening churches by producing and distributing printed spiritual materials such as pamphlets, magazines and books."
   }
@@ -71,7 +71,7 @@ const services = [
     features: ["8 Published Books", "Amharic Literature", "Biblical Teaching", "Spiritual Guidance"]
   },
   {
-    icon: MapPin,
+    icon: Church,
     title: "Church Planting",
     description: "Establishing new churches in unreached areas, focusing on indigenous leadership and sustainable growth in local communities.",
     features: ["Indigenous Leadership", "Local Partnerships", "Sustainable Growth", "Community Focus"]
@@ -83,13 +83,13 @@ const services = [
     features: ["Leadership Development", "Biblical Training", "Practical Skills", "Mentorship Programs"]
   },
   {
-    icon: Hand,
+    icon: Heart,
     title: "Prayer & Intercession",
     description: "Mobilizing prayer networks across the region for spiritual breakthrough, revival, and transformation in unreached communities.",
     features: ["Intercessory Prayer", "Prayer Partnerships", "Spiritual Warfare", "Regional Prayer Networks"]
   },
   {
-    icon: Lightbulb,
+    icon: Compass,
     title: "Mission Strategy",
     description: "Strategic mission work focused on the Horn of Africa region, addressing unique challenges of civil war, drought, and religious tension with the hope of Christ.",
     features: ["Regional Focus", "Cultural Sensitivity", "Strategic Planning", "Local Partnerships"]
@@ -155,17 +155,22 @@ export default function About() {
             {/* Founder's Image */}
             <div className="lg:col-span-1 flex justify-center">
               <div className="relative">
-                <div className="w-80 h-96 relative rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                <div className="w-[500px] h-[600px] relative">
                   <Image
-                    src="/founder.jpg"
+                    src="/babi.png"
                     alt="Evangelist Tsegaab Bekele - Founder of GFUNM"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     priority
                   />
-                </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center shadow-lg">
-                  <Heart className="w-12 h-12 text-blue-600" />
+                  {/* Blue glowing effect at bottom */}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-2">
+                    {/* Main glowing line */}
+                    <div className="w-full h-full bg-gradient-to-r from-transparent via-blue-500 to-transparent rounded-full shadow-lg shadow-blue-500/50"></div>
+                    {/* Additional glow layers for enhanced effect */}
+                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-blue-400 to-transparent rounded-full blur-sm opacity-75"></div>
+                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-blue-300 to-transparent rounded-full blur-md opacity-50"></div>
+                  </div>
                 </div>
               </div>
             </div>
