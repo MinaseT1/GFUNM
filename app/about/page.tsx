@@ -9,23 +9,8 @@ const ministryFocus = [
   {
     icon: Cross,
     title: "Our Mission",
-    description: "To see missional, Christ-centered churches flourishing in the Horn of Africa through practical ministry, discipleship, and church planting in Ethiopia, Somalia, Djibouti, and Eritrea."
+    description: "To see missional, Christ-centered churches flourishing in the Horn of Africa and beyond through practical ministry, discipleship, and church planting."
   },
-  {
-    icon: MapPin,
-    title: "Horn of Africa Focus",
-    description: "Strategically positioned in Ethiopia, we serve the Horn of Africa region, addressing the unique challenges of civil war, drought, and religious tension with the hope of Christ."
-  },
-  {
-    icon: Book,
-    title: "Inspiring Literature",
-    description: "Our collection of 8 carefully crafted books provides spiritual guidance, biblical wisdom, and encouragement for believers in both Amharic and other languages."
-  },
-  {
-    icon: HandHeart,
-    title: "Community Impact",
-    description: "Building strong Christian communities and empowering local leaders to continue the ministry work in their regions through practical service and discipleship."
-  }
 ];
 
 // Six Key Ministry Areas
@@ -220,17 +205,17 @@ export default function About() {
               Our Ministry Focus
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Based in Ethiopia, the hub of the Horn of Africa region, we focus on mission-oriented, practical ministry through preaching the Gospel, church planting, discipleship, and equipping saints and literature  for global missions.
+              Based in Ethiopia, the hub of the Horn of Africa region, we focus on mission-oriented, practical ministry through preaching the Gospel, Mission - church planting, discipleship equipping the saints for practical ministry and literature.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex justify-center">
             {ministryFocus.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={feature.title}
-                  className={`bg-white p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-1000 ${
+                  className={`bg-white p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-1000 max-w-md w-full ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: `${600 + index * 200}ms` }}
