@@ -182,13 +182,13 @@ export default function About() {
                   Evangelist Tsegaab Bekele
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Born and raised in the Church, Evangelist Tsegaab Bekele's life was transformed by the power of the Holy Spirit revival at Yabello Mekane Yesus Church in 1992 while he was a high school student. It was during this powerful revival that God touched his heart and revealed the divine calling upon his life to preach the Gospel.
+                  Born and raised in the Church, Evangelist Tsegaab Bekele&apos;s life was transformed by the power of the Holy Spirit revival at Yabello Mekane Yesus Church in 1992 while he was a high school student. During this powerful revival that God touched his heart and revealed the divine calling upon his life to preach the Gospel.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  After receiving Christian education at various levels in the local church, he began serving as a youth leader and gospel preacher. By God&apos;s grace, he was enabled to preach the good news in towns and rural villages even while still in high school.
+                  After receiving basic biblical education at various levels in the local church, he began serving as a youth leader and gospel preacher. By God&apos;s grace, he was enabled to preach the good news in towns and rural villages even while still in high school.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Following his high school graduation, he attended teachers training college in Addis Ababa, Ethiopia. After graduating, he returned to his mother church, Yabello Mekane Yesus Church, where he served as Pastor from 1995-1998.
+                  Following his high school graduation, he attended teachers training college in Addis Ababa, Ethiopia. After graduating, he returned to his mother church, Yabello Mekane Yesus Church, where he served as Evangelist from 1995-1998.
                 </p>
               </div>
               
@@ -197,10 +197,10 @@ export default function About() {
                   The Vision Birth
                 </h4>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  After extensive practical ministry in remote areas, the Lord opened the door for him to join seminary in Nairobi. It was during his time at seminary that he received from the Lord the specific vision to start GFUNM.
+                  After extensive practical ministry in remote areas, the Lord opened the door for him to join seminary in Nairobi. During his time at the seminary he received from the Lord the specific vision to start GFUNM.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  The ministry vision focuses on spreading the Kingdom Gospel in the Horn of Africa countries of Ethiopia, Somalia, Djibouti, and Eritrea - regions often marked by civil war, natural disasters, drought, Muslim radicals, ethnic conflict, and religious tension.
+                  The ministry vision focuses on spreading the Kingdom Gospel in the Horn of Africa countries and beyond. The regions often marked by civil war, natural disasters, drought, ethnic conflict, and religious tension.
                 </p>
               </div>
             </div>
